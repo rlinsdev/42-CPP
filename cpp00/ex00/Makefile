@@ -1,8 +1,10 @@
 NAME = megaphone
 
 # Compilation
-CC = g++
-CFLAGS = #-Wall -Wextra -Werror
+# CC = g++
+CC = c++
+CFLAGS = -std=c++98 -g3
+CFLAGS = #-Wall -Wextra -Werror -std=c++98 -g3
 # CFLAGS = -Wall -Wextra -Werror
 
 SRC = megaphone.cpp
@@ -16,6 +18,8 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
+run:
+	./megaphone abc abc
 
 clean:
 	rm -f *.o
