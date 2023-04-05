@@ -6,7 +6,15 @@ initialization lists, static, const, and some other basic
 stuff
 
 ### Ex00 - Megaphone
-bla bla
+Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
+This is an introduction to stdio streams and the string class.
+
+#### Usage
+```Bash
+$ make run
+#or
+$ ./megaphone "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
+```
 
 ### Ex01 - My Awesome PhoneBook
 bla bla
