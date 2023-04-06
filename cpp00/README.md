@@ -6,9 +6,9 @@ initialization lists, static, const, and some other basic
 stuff
 
 ## Definitions
-* Namespace
-* ::
-* <<
+* Namespace: Avoid use of declaration of what library we are using (Scope Resolution Operator)
+* **::**: Scope resolution operator
+* <<: **insertion operator**
 
 ### Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
