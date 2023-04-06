@@ -18,7 +18,10 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-run:
+run1:
+	./megaphone
+
+run2:
 	./megaphone abc abc
 
 clean:
