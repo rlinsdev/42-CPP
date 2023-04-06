@@ -1,11 +1,10 @@
 NAME = megaphone
 
 # Compilation
-# CC = g++
-CC = c++
-CFLAGS = -std=c++98 -g3
-CFLAGS = #-Wall -Wextra -Werror -std=c++98 -g3
-# CFLAGS = -Wall -Wextra -Werror
+CC = c++ -g3
+CFLAGS = -std=c++98
+#TODO: Descomentar com as flags de erro
+# CFLAGS = #-Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -18,11 +17,8 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-run1:
-	./megaphone
-
-run2:
-	./megaphone abc abc
+run:
+	make && ./megaphone
 
 clean:
 	rm -f *.o
