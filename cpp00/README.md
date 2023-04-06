@@ -5,6 +5,11 @@ Namespaces, classes, member functions, stdio streams,
 initialization lists, static, const, and some other basic
 stuff
 
+## Definitions
+* Namespace
+* ::
+* <<
+
 ### Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
