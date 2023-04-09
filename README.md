@@ -6,9 +6,12 @@ initialization lists, static, const, and some other basic
 stuff
 
 ## Definitions of C++ (Language)
-* Namespace: Avoid use of declaration of what library we are using (Scope Resolution Operator)
-* **::**: Scope resolution operator
-* <<: **insertion operator**
+* **cout** -> Standard OutPut (read it: see out)
+* **cin** -> Standard Input
+* **::** -> Scope resolution operator
+* **<<** and **>>** -> Operators
+* **<<** -> insertion operator
+* **<< std::endl** -> endline. '\n'
 
 ## Definitions of Object Oriented Programming (OOP)
 * Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
@@ -39,3 +42,8 @@ $ ./xxxx "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
 ## CPP01
 bla bla
 
+
+
+
+# Links
+* [Intranet Videos](https://elearning.intra.42.fr/notions/piscine-c-d00-c-basics/subnotions)
