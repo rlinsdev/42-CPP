@@ -18,6 +18,8 @@ stuff
 * **Access Specifiers Public** Members are accessible from outside the class
 * **Access Specifiers Private** Members cannot be accessed (or viewed) from outside the class
 * **Access Specifiers Protected** Members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
+* **Struct and Class** will be the same in C++. The only one difference is that Scope of class is Private by default. Scope of struct is public by default.
+
 
 ## Definitions of Object Oriented Programming (OOP)
 * Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
