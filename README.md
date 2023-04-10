@@ -12,6 +12,8 @@ stuff
 * **<<** and **>>** -> Operators
 * **<<** -> insertion operator
 * **<< std::endl** -> endline. '\n'
+* **Destructor (~)** Will destroy the functions (local variable will be destroyed)
+* **Member attributes** Variables in class (Prop/attributes in OO)
 
 ## Definitions of Object Oriented Programming (OOP)
 * Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
@@ -47,3 +49,4 @@ bla bla
 
 # Links
 * [Intranet Videos](https://elearning.intra.42.fr/notions/piscine-c-d00-c-basics/subnotions)
+* [Lucas Video](https://www.youtube.com/watch?v=TnrQMtxPeEg)
