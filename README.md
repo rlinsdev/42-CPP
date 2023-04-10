@@ -14,6 +14,10 @@ stuff
 * **<< std::endl** -> endline. '\n'
 * **Destructor (~)** Will destroy the functions (local variable will be destroyed)
 * **Member attributes** Variables in class (Prop/attributes in OO)
+* **Access Specifiers** As equals **Access Modifiers** in C#
+* **Access Specifiers Public** Members are accessible from outside the class
+* **Access Specifiers Private** Members cannot be accessed (or viewed) from outside the class
+* **Access Specifiers Protected** Members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
 
 ## Definitions of Object Oriented Programming (OOP)
 * Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
