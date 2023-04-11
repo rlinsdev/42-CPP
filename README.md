@@ -24,7 +24,12 @@ stuff
 * **Methods** The same as functions in C
 * **Initialization list** When pass in the method the initialization of parameters
 * **Const** Const in the end of function - will not allow change the value inside of this method
-*
+* **Accessors** Knows as Getters and Setters too. They help to control access to class data and maintain data encapsulation.
+Generate function to get and set a (private) variables values.
+* **Comparison** Override a method to do something different: To compare 2 objects, we must build a method to do this, and specify what we
+want to result of this comparison (will be used in CPP02)
+
+
 
 
 
