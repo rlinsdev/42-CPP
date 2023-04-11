@@ -19,6 +19,13 @@ stuff
 * **Access Specifiers Private** Members cannot be accessed (or viewed) from outside the class
 * **Access Specifiers Protected** Members cannot be accessed from outside the class, however, they can be accessed in inherited classes.
 * **Struct and Class** will be the same in C++. The only one difference is that Scope of class is Private by default. Scope of struct is public by default.
+* **accessors c++** Get and Set
+* **Attributes** 'attributes in class' are modifiers that can modify the behavior class
+* **Methods** The same as functions in C
+* **Initialization list** When pass in the method the initialization of parameters
+* **Const** Const in the end of function - will not allow change the value inside of this method
+*
+
 
 
 ## Definitions of Object Oriented Programming (OOP)
