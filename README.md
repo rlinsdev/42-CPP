@@ -30,28 +30,26 @@ Generate function to get and set a (private) variables values.
 want to result of this comparison (will be used in CPP02)
 
 
-
-
-
 ## Definitions of Object Oriented Programming (OOP)
 * Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
 
 
-### Ex00 - Megaphone
+### CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
 
-#### Usage
+### CPP00-Ex00 -Usage
 ```Bash
 $ make run
 #or
 $ ./megaphone "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
 ```
 
-### Ex01 - My Awesome PhoneBook
-bla blaWrite a program that behaves like a crappy awesome phonebook software.
+### CPP00-Ex01 - My Awesome PhoneBook
+BLABLABLABLA Write a program that behaves like a crappy awesome phonebook software.
 
-#### Usage
+### Usage
+BLABLABLABLA
 ```Bash
 $ make run
 #or
