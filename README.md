@@ -30,8 +30,10 @@ Generate function to get and set a (private) variables values.
 want to result of this comparison (will be used in CPP02)
 
 
-## Definitions of Object Oriented Programming (OOP)
-* Namespace: A namespace is a declarative region that provides a scope to the identifiers inside it
+# Definitions of Object Oriented Programming (OOP)
+### Namespace:
+A namespace is a declarative region that provides a scope to the identifiers inside it (e.g. names of functions, variables...)
+Namespaces are typically used to avoid name collisions, which can occur when two different parts of a program use the same identifier for different purposes.
 
 
 ### CPP00-Ex00 - Megaphone
