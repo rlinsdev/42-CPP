@@ -15,12 +15,14 @@ SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 
-SRC = main.cpp
+SRC = main.cpp PhoneBook.cpp
 
 SRCS 	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ 	= $(SRC:.cpp=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 INC		= -I $(INC_PATH)
+
+#NO_PRINT	= --no-print-directory
 
 all: $(OBJ_PATH) $(NAME)
 
