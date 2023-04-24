@@ -1,5 +1,10 @@
 NAME = phonebook
 
+# Collors
+RESET 	= \033[0m
+GREEN 	= \033[0;32m
+RED 	= \033[0;31m
+
 # Compilation
 CC = c++ -g3
 CFLAGS = -std=c++98
@@ -22,24 +27,27 @@ all: $(OBJ_PATH) $(NAME)
 # Objects directory rule
 #"-p" option ensures that the command creates any necessary parent directories as well, if they don't already exist.
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
+	@mkdir -p $(OBJ_PATH)
 
 # Objects rule
 $(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
 
 # Project file rules
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC)
+	@$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC)
+	@echo "$(GREEN)Build Successful$(RESET)"
 
 run:
 	make && ./phonebook
 
 clean:
-	rm -rf $(OBJ_PATH)
+	@echo "$(RED)Cleaning objects...$(RESET)"
+	@rm -rf $(OBJ_PATH)
+	@echo "$(GREEN)Done!$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
