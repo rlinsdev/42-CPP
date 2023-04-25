@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 16:32:35 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 16:42:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	PhoneBook::farewell() {
  * @param minLeng Min length allowed
  * @return boolean - valid or invalid
  */
-bool	PhoneBook::validInput(std::string input, const std::string allowedChar, int minLeng) {
+bool	PhoneBook::validInput(std::string input, const std::string allowedChar, long unsigned int minLeng) {
 	if (input.length() < minLeng) {
 		std::cout << "Invalid input in: " << input << ". Min length not reached" << std::endl;
 	}
-	for (int i = 0; i< input.length(); i++) {
+	for (int i = 0; i < (int)input.length(); i++) {
 		if (allowedChar.find_first_of(input[i]) == std::string::npos) { // TODO
 			std::cout << "Invalid input in: " << input << ". Special char not allowed: '" << input[i] << "'" << std::endl;
 			return (false);
