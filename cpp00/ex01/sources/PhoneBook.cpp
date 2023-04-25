@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 09:56:55 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 10:18:25 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	PhoneBook::displayAllContact(void)
 
 	for (int i = 0; i < 8; i++)
 	{
-		if (this->_contactList[i].isEmpty()) // TODO
+		if (this->_contactList[i].hasValue() == false)
 		{
 			break;
 		}
@@ -103,6 +103,8 @@ void	PhoneBook::displayAllContact(void)
 		truncate(this->_contactList[i].getLastName());
 		truncate(this->_contactList[i].getNickName());
 	}
+	std::cout << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
 }
 
 /**

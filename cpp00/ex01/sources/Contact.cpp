@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:18:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 09:16:26 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 10:14:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 /**
  * @brief Construct a new Contact:: Contact object
  */
-Contact::Contact()
-{
+Contact::Contact() {
 	return ;
 }
 
 /**
  * @brief Destructor of Contact object
  */
-Contact::~Contact()
-{
+Contact::~Contact() {
 	return ;
 }
 
@@ -65,4 +63,13 @@ void Contact::setPhoneNumber(const std::string phoneNumber) {
 }
 void Contact::setDarkestSecret(const std::string darkestSecret) {
 	this->_darkestSecret = darkestSecret;
+}
+
+bool Contact::hasValue(void) {
+	if (this->_firstName.empty()) {
+		return (false); // TODOs - outras variáveis
+	}
+
+
+	return (true);
 }
