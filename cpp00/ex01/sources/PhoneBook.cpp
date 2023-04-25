@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 12:05:31 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 16:32:35 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,22 +53,94 @@ void	PhoneBook::farewell() {
 	std::cout << "|------------------------------------------|" << std::endl << std::endl;
 }
 
+/**
+ * @brief Will handle the input, if it is valid or not. Validate char by char and the
+ * min. length allowed
+ * @param input String to validate
+ * @param allowedChar String with allowed chars
+ * @param minLeng Min length allowed
+ * @return boolean - valid or invalid
+ */
+bool	PhoneBook::validInput(std::string input, const std::string allowedChar, int minLeng) {
+	if (input.length() < minLeng) {
+		std::cout << "Invalid input in: " << input << ". Min length not reached" << std::endl;
+	}
+	for (int i = 0; i< input.length(); i++) {
+		if (allowedChar.find_first_of(input[i]) == std::string::npos) { // TODO
+			std::cout << "Invalid input in: " << input << ". Special char not allowed: '" << input[i] << "'" << std::endl;
+			return (false);
+		}
+	}
+	return (true);
+}
+
+/**
+ * @brief Will handle different types of inputs. Just number or number en char.
+ * @param input Input to be validated
+ * @param justNumber Handle just number or number and letter
+ * @return boolean success or not
+ */
+bool	PhoneBook::isValidField(std::string input, bool justNumber) {
+	// TODO: Verificar se é vazio também?
+	if (justNumber == true) {
+		return (validInput(input, "0123456789", 3));
+	} else {
+		return (validInput(input, "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 3));
+	}
+}
+
 void	PhoneBook::addContact(void) {
 	indexHandler();
 	std::cout << "|--------------- New Contact --------------|" << std::endl;
 
 	std::string input;
-	// TODO: Add o restante das variáveixs
+
 	std::cout << "First Name: ";
 	std::getline(std::cin, input);
-	this->_contactList[this->_index].setFirstName(input);
+	if (isValidField(input, false) == true) {
+		this->_contactList[this->_index].setFirstName(input);
+	} else {
+		return ;
+	}
+
+	std::cout << "Last Name: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == true) { // TODO: ValidField não 'validate'
+		this->_contactList[this->_index].setLastName(input);
+	} else {
+		return ;
+	}
+
+	std::cout << "Nick Name: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == true) {
+		this->_contactList[this->_index].setNickName(input);
+	} else {
+		return ;
+	}
+
+	std::cout << "Phone Number: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, true) == true) {
+		this->_contactList[this->_index].setPhoneNumber(input);
+	} else {
+		return ;
+	}
+
+	std::cout << "Darkest Secret: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == true) {
+		this->_contactList[this->_index].setDarkestSecret(input);
+	} else {
+		return ;
+	}
 
 	std::cout << "Contact Saved!" << std::endl;
 }
 
 void	PhoneBook::searchContact(void) {
 	if (this->_index == -1) {
-		std::cout << "PhoneBook is empty." << std::endl;
+		std::cout << "Sorry... PhoneBook is empty." << std::endl;
 		return ;
 	}
 	this->displayAllContact();
