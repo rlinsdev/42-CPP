@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:36:27 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 12:04:10 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 16:19:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	main(void)
 {
 	// std::cout << "opa" << std::endl;
 	PhoneBook pBook;
-	pBook.menu();
 
 	std::string value;
 	while (true)
 	{
+		pBook.menu();
 		std::cout << "> ";
 		getline(std::cin, value);
 
