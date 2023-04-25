@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 09:12:47 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 09:36:42 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	PhoneBook::addContact(void)
 	std::cout << "|--------------- New Contact --------------|" << std::endl;
 
 	std::string input;
+	// TODO: Add o restante das variáveixs
 	std::cout << "First Name: ";
 	std::getline(std::cin, input);
 	this->_contactList[this->_index].setFirstName(input);
@@ -71,7 +72,13 @@ void	PhoneBook::addContact(void)
 
 void	PhoneBook::searchContact(void)
 {
-	std::cout << "SearchContact called" << std::endl;
+	if (this->_index == -1)
+	{
+		std::cout << "PhoneBook is empty."<<std::endl;
+		return ;
+	}
+
+	// std::cout << "SearchContact called" << std::endl;
 }
 
 /**
@@ -84,4 +91,15 @@ void	PhoneBook::indexHandler(void)
 	if (this->_index == 7) {
 		this->_index = 0;
 	}
+}
+
+void	PhoneBook::truncate(std::string str)
+{
+	if (str.length() > 10)
+	{
+		str.resize(9);
+		str +=  ".";
+	}
+	std::cout << std::setw(10) << str << "|"; // TODO 'setw'
+	return ;
 }

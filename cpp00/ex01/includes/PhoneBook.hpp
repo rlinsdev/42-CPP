@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 08:57:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 09:31:45 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class PhoneBook
 		Contact	_contactList[8];
 
 		void	indexHandler(void);
+		void	truncate(std::string str)
 
 
 	public:
