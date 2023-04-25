@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:36:27 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/24 17:46:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 08:39:21 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	main(void)
 
 		if (value == "1" || value == "ADD")
 		{
-			std::cout << "1" << std::endl;
+			pBook.addContact();
 		}
 		else if (value == "2" || value == "SEARCH")
 		{
-			std::cout << "2" << std::endl;
+			pBook.searchContact();
 		}
 		else if (value == "3" || value == "EXIT")
 		{
