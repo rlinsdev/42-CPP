@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/24 12:29:00 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/24 17:45:59 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ void	PhoneBook::menu()
 	std::cout << "|        (2) SEARCH - Display Contacts     |" << std::endl;
 	std::cout << "|        (3) EXIT - Quit program           |" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
+}
+
+void PhoneBook::farewell()
+{
+	std::cout << std::endl << std::endl;
+	std::cout << "|------------------------------------------|" << std::endl;
+	std::cout << "|-------- See you later, Alligator --------|" << std::endl;
+	std::cout << "|------------------------------------------|" << std::endl << std::endl;
 }

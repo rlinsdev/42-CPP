@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/24 11:55:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 07:33:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void	menu();
+		void	farewell();
 };
 
 #endif

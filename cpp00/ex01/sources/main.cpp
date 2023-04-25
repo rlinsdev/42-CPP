@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:36:27 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/24 12:44:45 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/24 17:46:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 		std::cout << "> ";
 		getline(std::cin, value);
 
-		if (value == "1" || value = "ADD")
+		if (value == "1" || value == "ADD")
 		{
 			std::cout << "1" << std::endl;
 		}
@@ -42,9 +42,6 @@ int	main(void)
 			std::cout << "Invalid Choice. Try again" << std::endl;
 		}
 	}
-	std::cout << "|------------------------------------------|" << std::endl;
-	std::cout << "|-------- Welcome to PhoneBook(42) --------|" << std::endl;
-	std::cout << "|----------- Choose one option: -----------|" << std::endl;
-	std::cout << "|------------------------------------------|" << std::endl;
+	pBook.farewell();
 	return (0);
 }
