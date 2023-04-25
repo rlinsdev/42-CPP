@@ -7,8 +7,6 @@ RED 	= \033[0;31m
 
 # Compilation
 CC = c++ -g3
-# CFLAGS = -std=c++98
-#TODO: Descomentar com as flags de erro
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = ./sources/
