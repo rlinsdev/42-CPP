@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 10:18:25 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 10:21:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,8 @@ void	PhoneBook::addContact(void)
 	std::cout << "Contact Saved!" << std::endl;
 }
 
-void	PhoneBook::searchContact(void)
-{
-	if (this->_index == -1)
-	{
+void	PhoneBook::searchContact(void) {
+	if (this->_index == -1) {
 		std::cout << "PhoneBook is empty."<<std::endl;
 		return ;
 	}
@@ -86,16 +84,13 @@ void	PhoneBook::searchContact(void)
 /**
  * @brief Will display all contacts. Jus 4 columns and truncate at 10
  */
-void	PhoneBook::displayAllContact(void)
-{
+void	PhoneBook::displayAllContact(void) {
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 
-	for (int i = 0; i < 8; i++)
-	{
-		if (this->_contactList[i].hasValue() == false)
-		{
+	for (int i = 0; i < 8; i++) {
+		if (this->_contactList[i].hasValue() == false) {
 			break;
 		}
 		std::cout << "|" << std::setw(10) << i << "|"; // TODO: setw
@@ -111,8 +106,7 @@ void	PhoneBook::displayAllContact(void)
  * @brief Will increment the index of contacts.
  * Subject: "If the user tries to add a 9th contact, replace the oldest one by the new one"
  */
-void	PhoneBook::indexHandler(void)
-{
+void	PhoneBook::indexHandler(void) {
 	this->_index++;
 	if (this->_index == 7) {
 		this->_index = 0;
@@ -126,10 +120,8 @@ void	PhoneBook::indexHandler(void)
  * dot (’.’)."
  * @param str String to be truncated
  */
-void	PhoneBook::truncate(std::string str)
-{
-	if (str.length() > 10)
-	{
+void	PhoneBook::truncate(std::string str) {
+	if (str.length() > 10) {
 		str.resize(9);
 		str +=  ".";
 	}
