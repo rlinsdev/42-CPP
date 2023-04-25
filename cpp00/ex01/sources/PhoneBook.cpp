@@ -6,12 +6,13 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 09:36:42 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 09:56:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream> 	// std::cout
+#include <iomanip>		//setW
 
 /**
  * @brief Class Constructor. When instantiate the class, this will be called.
@@ -77,8 +78,31 @@ void	PhoneBook::searchContact(void)
 		std::cout << "PhoneBook is empty."<<std::endl;
 		return ;
 	}
-
+	this->displayAllContact();
+	// TODO: Lógica pra listar 1 contato só aqui
 	// std::cout << "SearchContact called" << std::endl;
+}
+
+/**
+ * @brief Will display all contacts. Jus 4 columns and truncate at 10
+ */
+void	PhoneBook::displayAllContact(void)
+{
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+
+	for (int i = 0; i < 8; i++)
+	{
+		if (this->_contactList[i].isEmpty()) // TODO
+		{
+			break;
+		}
+		std::cout << "|" << std::setw(10) << i << "|"; // TODO: setw
+		truncate(this->_contactList[i].getFirstName());
+		truncate(this->_contactList[i].getLastName());
+		truncate(this->_contactList[i].getNickName());
+	}
 }
 
 /**
@@ -93,6 +117,13 @@ void	PhoneBook::indexHandler(void)
 	}
 }
 
+/**
+ * @brief "Each column must be 10 characters wide. A pipe character (’|’) separates
+ * them. The text must be right-aligned. If the text is longer than the column,
+ * it must be truncated and the last displayable character must be replaced by a
+ * dot (’.’)."
+ * @param str String to be truncated
+ */
 void	PhoneBook::truncate(std::string str)
 {
 	if (str.length() > 10)
@@ -100,6 +131,7 @@ void	PhoneBook::truncate(std::string str)
 		str.resize(9);
 		str +=  ".";
 	}
+	// TODO: Right aligned
 	std::cout << std::setw(10) << str << "|"; // TODO 'setw'
 	return ;
 }
