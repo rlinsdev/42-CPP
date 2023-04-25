@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:18:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 10:14:57 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 16:45:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,17 @@ void Contact::setDarkestSecret(const std::string darkestSecret) {
 	this->_darkestSecret = darkestSecret;
 }
 
+/**
+ * @brief Verify if all the local variables has value.
+ * @return boolean - has or not value in all variables
+ */
 bool Contact::hasValue(void) {
-	if (this->_firstName.empty()) {
-		return (false); // TODOs - outras variáveis
+	if (this->_firstName.empty() ||
+		this->_lastName.empty() ||
+		this->_nickName.empty() ||
+		this->_phoneNumber.empty() ||
+		this->_darkestSecret.empty()) {
+		return (false);
 	}
-
-
 	return (true);
 }
