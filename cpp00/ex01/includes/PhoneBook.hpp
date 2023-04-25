@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 09:57:04 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 11:01:03 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class PhoneBook
 
 		void	indexHandler(void);
 		void	displayAllContact(void);
-		void	displaySingleContact(int index);
+		void	displaySingleContact(std::string input);
 		void	truncate(std::string str);
+		void	headerContacts(void);
 
 
 	public:

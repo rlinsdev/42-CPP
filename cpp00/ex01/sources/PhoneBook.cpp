@@ -6,13 +6,13 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 10:21:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 11:01:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream> 	// std::cout
-#include <iomanip>		//setW
+#include <iomanip>		// setW
 
 /**
  * @brief Class Constructor. When instantiate the class, this will be called.
@@ -73,22 +73,48 @@ void	PhoneBook::addContact(void)
 
 void	PhoneBook::searchContact(void) {
 	if (this->_index == -1) {
-		std::cout << "PhoneBook is empty."<<std::endl;
+		std::cout << "PhoneBook is empty." << std::endl;
 		return ;
 	}
 	this->displayAllContact();
-	// TODO: Lógica pra listar 1 contato só aqui
-	// std::cout << "SearchContact called" << std::endl;
+	std::string input;
+	std::cout << "Put the index to show details info: " << std::endl;
+	std::getline(std::cin, input);
+	// Isso aqui já está sendo tratado ali em baixo, certo?
+	// if (input.empty() || this->_contactList[input].hasValue() == false ) { // TODO: Testar se este has value vai dar certo mesmo (Passar um index maior aqui)
+	// 	std::cout << "Invalid index." << std::endl;
+	// 	return ;
+	// }
+	displaySingleContact(input); // TODO:IsDigit aqui????
+}
+
+void	PhoneBook::headerContacts(void) {
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+}
+
+void	PhoneBook::displaySingleContact(std::string input) {
+	headerContacts();
+
+	if (input.length() == 1 && std::isdigit(input[0])) {
+		int	index = input[0] - '0';
+
+		std::cout << "First Name: " << this->_contactList[index].getFirstName() << std::endl;
+		std::cout << "Last Name: " << this->_contactList[index].getLastName() << std::endl;
+		std::cout << "Nick Name: " << this->_contactList[index].getNickName() << std::endl;
+		std::cout << "Phone Number: " << this->_contactList[index].getPhoneNumber() << std::endl;
+		std::cout << "Darkest Secret: " << this->_contactList[index].getDarkestSecret() << std::endl;
+		std::cout << "+----------+----------+----------+----------+" << std::endl;
+	}
+	std::cout << "Invalid index" << std::endl;
 }
 
 /**
  * @brief Will display all contacts. Jus 4 columns and truncate at 10
  */
 void	PhoneBook::displayAllContact(void) {
-	std::cout << "+----------+----------+----------+----------+" << std::endl;
-	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
-	std::cout << "+----------+----------+----------+----------+" << std::endl;
-
+	headerContacts();
 	for (int i = 0; i < 8; i++) {
 		if (this->_contactList[i].hasValue() == false) {
 			break;
