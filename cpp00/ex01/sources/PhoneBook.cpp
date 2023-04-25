@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 11:01:15 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/25 12:05:31 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,20 @@
 /**
  * @brief Class Constructor. When instantiate the class, this will be called.
  */
-PhoneBook::PhoneBook() : _index(-1)
-{
+PhoneBook::PhoneBook() : _index(-1) {
 }
 
 /**
  * @brief Destroy the Phone Book. Free all objects when finished to use this
  * object
  */
-PhoneBook::~PhoneBook()
-{
+PhoneBook::~PhoneBook() {
 }
 
 /**
  * @brief Welcome message
  */
-void	PhoneBook::menu()
-{
+void	PhoneBook::menu() {
 	std::cout << std::endl << std::endl;
 
 	std::cout << "|------------------------------------------|" << std::endl;
@@ -49,16 +46,14 @@ void	PhoneBook::menu()
 /**
  * @brief Farewell message
  */
-void	PhoneBook::farewell()
-{
+void	PhoneBook::farewell() {
 	std::cout << std::endl << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
 	std::cout << "|-------- See you later, Alligator --------|" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl << std::endl;
 }
 
-void	PhoneBook::addContact(void)
-{
+void	PhoneBook::addContact(void) {
 	indexHandler();
 	std::cout << "|--------------- New Contact --------------|" << std::endl;
 
