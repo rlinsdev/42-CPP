@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 16:41:16 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/26 13:34:10 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 #include <Contact.hpp>
 
-class PhoneBook
-{
+class PhoneBook {
 	private:
 		int		_index;
 		Contact	_contactList[8];
