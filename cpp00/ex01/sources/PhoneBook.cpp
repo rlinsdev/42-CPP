@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 13:57:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/26 14:06:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,19 +145,29 @@ void	PhoneBook::searchContact(void) {
 	this->displayAllContact();
 	std::string input;
 	std::cout << "Put the index to show details info: " << std::endl;
+	std::cout << "> ";
 	std::getline(std::cin, input);
 	displaySingleContact(input);
 }
 
+/**
+ * @brief
+ *
+ */
 void	PhoneBook::headerContacts(void) {
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 }
 
+/**
+ * @brief
+ *
+ * @param input
+ */
 void	PhoneBook::displaySingleContact(std::string input) {
-	headerContacts();
-
+	// headerContacts();
+	std::cout << "|--------------- User Detail --------------|" << std::endl;
 	if (input.length() == 1 && std::isdigit(input[0])) {
 		int	index = input[0] - '0';
 
@@ -166,9 +176,10 @@ void	PhoneBook::displaySingleContact(std::string input) {
 		std::cout << "Nick Name: " << this->_contactList[index].getNickName() << std::endl;
 		std::cout << "Phone Number: " << this->_contactList[index].getPhoneNumber() << std::endl;
 		std::cout << "Darkest Secret: " << this->_contactList[index].getDarkestSecret() << std::endl;
-		std::cout << "+----------+----------+----------+----------+" << std::endl;
+		std::cout << "+----------.----------.----------.----------+" << std::endl;
+	} else {
+		std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 	}
-	std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 }
 
 /**
@@ -184,6 +195,7 @@ void	PhoneBook::displayAllContact(void) {
 		truncate(this->_contactList[i].getFirstName());
 		truncate(this->_contactList[i].getLastName());
 		truncate(this->_contactList[i].getNickName());
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
