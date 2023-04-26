@@ -20,8 +20,6 @@ OBJ 	= $(SRC:.cpp=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
 INC		= -I $(INC_PATH)
 
-#NO_PRINT	= --no-print-directory
-
 all: $(OBJ_PATH) $(NAME)
 
 # Objects directory rule
