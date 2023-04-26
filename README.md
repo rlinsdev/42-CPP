@@ -24,7 +24,7 @@ stuff
 * **Const** Const in the end of function - will not allow change the value inside of this method
 * **Comparison** Override a method to do something different: To compare 2 objects, we must build a method to do this, and specify what we
 want to result of this comparison (will be used in CPP02)
-* **setw** Set the field width
+* **setw** Set the field width and right align
 
 
 # Definitions of Object Oriented Programming (OOP)
