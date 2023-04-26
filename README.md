@@ -25,7 +25,7 @@ stuff
 * **Comparison** Override a method to do something different: To compare 2 objects, we must build a method to do this, and specify what we
 want to result of this comparison (will be used in CPP02)
 * **setw** Set the field width and right align
-
+* **find_first_of** Searches the string for the first character that matches any of the characters specified in its arguments.
 
 # Definitions of Object Oriented Programming (OOP)
 ### Namespace:

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 13:39:13 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/26 13:57:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	PhoneBook::farewell() {
  */
 bool	PhoneBook::validInput(std::string input, const std::string allowedChar, long unsigned int minLeng) {
 	if (input.length() < minLeng) {
-		std::cout << "Invalid input in: " << input << ". Min length not reached" << std::endl;
+		std::cout <<  "Invalid input. Mini length not reached." << std::endl;
 	}
 	for (int i = 0; i < (int)input.length(); i++) {
-		if (allowedChar.find_first_of(input[i]) == std::string::npos) { // TODO
+		if (allowedChar.find_first_of(input[i]) == std::string::npos) {
 			std::cout << "Invalid input in: " << input << ". Special char not allowed: '" << input[i] << "'" << std::endl;
 			return (false);
 		}
@@ -81,7 +81,6 @@ bool	PhoneBook::validInput(std::string input, const std::string allowedChar, lon
  * @return boolean success or not
  */
 bool	PhoneBook::isValidField(std::string input, bool justNumber) {
-	// TODO: Verificar se é vazio também?
 	if (justNumber == true) {
 		return (validInput(input, "0123456789", 3));
 	} else {
@@ -105,7 +104,7 @@ void	PhoneBook::addContact(void) {
 
 	std::cout << "Last Name: ";
 	std::getline(std::cin, input);
-	if (isValidField(input, false) == true) { // TODO: ValidField não 'validate'
+	if (isValidField(input, false) == true) {
 		this->_contactList[this->_index].setLastName(input);
 	} else {
 		return ;
@@ -147,12 +146,7 @@ void	PhoneBook::searchContact(void) {
 	std::string input;
 	std::cout << "Put the index to show details info: " << std::endl;
 	std::getline(std::cin, input);
-	// Isso aqui já está sendo tratado ali em baixo, certo?
-	// if (input.empty() || this->_contactList[input].hasValue() == false ) { // TODO: Testar se este has value vai dar certo mesmo (Passar um index maior aqui)
-	// 	std::cout << "Invalid index." << std::endl;
-	// 	return ;
-	// }
-	displaySingleContact(input); // TODO:IsDigit aqui????
+	displaySingleContact(input);
 }
 
 void	PhoneBook::headerContacts(void) {
@@ -174,7 +168,7 @@ void	PhoneBook::displaySingleContact(std::string input) {
 		std::cout << "Darkest Secret: " << this->_contactList[index].getDarkestSecret() << std::endl;
 		std::cout << "+----------+----------+----------+----------+" << std::endl;
 	}
-	std::cout << "Invalid index" << std::endl;
+	std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 }
 
 /**
