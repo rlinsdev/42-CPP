@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:18:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/25 16:45:19 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/26 08:17:53 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ Contact::~Contact() {
  * @brief Getters of Contact class
  */
 
-std::string	Contact::getFirstName(void) const {
+const std::string	Contact::getFirstName(void) const {
 	return (this->_firstName);
 }
-std::string Contact::getLastName(void) const {
+const std::string Contact::getLastName(void) const {
 	return (this->_lastName);
 }
-std::string Contact::getNickName(void) const {
+const std::string Contact::getNickName(void) const {
 	return (this->_nickName);
 }
-std::string Contact::getPhoneNumber(void) const {
+const std::string Contact::getPhoneNumber(void) const {
 	return (this->_phoneNumber);
 }
-std::string Contact::getDarkestSecret(void) const {
+const std::string Contact::getDarkestSecret(void) const {
 	return (this->_darkestSecret);
 }
 
