@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 14:06:57 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/26 15:18:30 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	PhoneBook::menu() {
 	std::cout << std::endl << std::endl;
 
 	std::cout << "|------------------------------------------|" << std::endl;
-	std::cout << "|-------- Welcome to PhoneBook(42) --------|" << std::endl;
+	std::cout << "|-- Welcome to Crappy Awesome PhoneBook  --|" << std::endl;
 	std::cout << "|----------- Choose one option: -----------|" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
 	std::cout << "|        (1) ADD - Add Contact to list     |" << std::endl;
@@ -47,7 +47,6 @@ void	PhoneBook::menu() {
  * @brief Farewell message
  */
 void	PhoneBook::farewell() {
-	std::cout << std::endl << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
 	std::cout << "|-------- See you later, Alligator --------|" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl << std::endl;
@@ -64,6 +63,7 @@ void	PhoneBook::farewell() {
 bool	PhoneBook::validInput(std::string input, const std::string allowedChar, long unsigned int minLeng) {
 	if (input.length() < minLeng) {
 		std::cout <<  "Invalid input. Mini length not reached." << std::endl;
+		return (false);
 	}
 	for (int i = 0; i < (int)input.length(); i++) {
 		if (allowedChar.find_first_of(input[i]) == std::string::npos) {
@@ -88,53 +88,129 @@ bool	PhoneBook::isValidField(std::string input, bool justNumber) {
 	}
 }
 
+/**
+ * @brief Recursive call to validate the input - FirstName input
+ */
+void	PhoneBook::handleFirstName(void) {
+	std::string input;
+	std::cout << "First Name: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == false) {
+		handleFirstName();
+	} else {
+		this->_contactList[this->_index].setFirstName(input);
+	}
+}
+
+/**
+ * @brief Recursive call to validate the input - LastName
+ */
+void	PhoneBook::handleLastName(void) {
+	std::string input;
+	std::cout << "Last Name: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == false) {
+		handleLastName();
+	} else {
+		this->_contactList[this->_index].setLastName(input);
+	}
+}
+
+/**
+ * @brief Recursive call to validate the input - Nick Name
+ */
+void	PhoneBook::handleNickName(void) {
+	std::string input;
+	std::cout << "Nick Name: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == false) {
+		handleNickName();
+	} else {
+		this->_contactList[this->_index].setNickName(input);
+	}
+}
+
+/**
+ * @brief Recursive call to validate the input - Phone number
+ */
+void	PhoneBook::handlePhoneNumber(void) {
+	std::string input;
+	std::cout << "Phone Number (Just number): ";
+	std::getline(std::cin, input);
+	if (isValidField(input, true) == false) {
+		handlePhoneNumber();
+	} else {
+		this->_contactList[this->_index].setPhoneNumber(input);
+	}
+}
+
+/**
+ * @brief Recursive call to validate the input - Darkest Secret
+ */
+void	PhoneBook::handleDarkestSecret(void) {
+	std::string input;
+	std::cout << "Darkest Secret: ";
+	std::getline(std::cin, input);
+	if (isValidField(input, false) == false) {
+		handleDarkestSecret();
+	} else {
+		this->_contactList[this->_index].setDarkestSecret(input);
+	}
+}
+
+
 void	PhoneBook::addContact(void) {
 	indexHandler();
 	std::cout << "|--------------- New Contact --------------|" << std::endl;
 
-	std::string input;
+	// std::string input;
 
-	std::cout << "First Name: ";
-	std::getline(std::cin, input);
-	if (isValidField(input, false) == true) {
-		this->_contactList[this->_index].setFirstName(input);
-	} else {
-		return ;
-	}
+	handleFirstName();
+	handleLastName();
+	handleNickName();
+	handlePhoneNumber();
+	handleDarkestSecret();
 
-	std::cout << "Last Name: ";
-	std::getline(std::cin, input);
-	if (isValidField(input, false) == true) {
-		this->_contactList[this->_index].setLastName(input);
-	} else {
-		return ;
-	}
+	// std::cout << "First Name: ";
+	// std::getline(std::cin, input);
+	// isValidField(input, false) == false)
+	// this->_contactList[this->_index].setFirstName(input);
 
-	std::cout << "Nick Name: ";
-	std::getline(std::cin, input);
-	if (isValidField(input, false) == true) {
-		this->_contactList[this->_index].setNickName(input);
-	} else {
-		return ;
-	}
 
-	std::cout << "Phone Number: ";
-	std::getline(std::cin, input);
-	if (isValidField(input, true) == true) {
-		this->_contactList[this->_index].setPhoneNumber(input);
-	} else {
-		return ;
-	}
+	// std::cout << "Last Name: ";
+	// std::getline(std::cin, input);
+	// if (isValidField(input, false) == true) {
+	// 	this->_contactList[this->_index].setLastName(input);
+	// } else {
+	// 	return ;
+	// }
 
-	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, input);
-	if (isValidField(input, false) == true) {
-		this->_contactList[this->_index].setDarkestSecret(input);
-	} else {
-		return ;
-	}
+	// std::cout << "Nick Name: ";
+	// std::getline(std::cin, input);
+	// if (isValidField(input, false) == true) {
+	// 	this->_contactList[this->_index].setNickName(input);
+	// } else {
+	// 	return ;
+	// }
 
-	std::cout << "Contact Saved!" << std::endl;
+	// std::cout << "Phone Number (Just number): ";
+	// std::getline(std::cin, input);
+	// if (isValidField(input, true) == true) {
+	// 	this->_contactList[this->_index].setPhoneNumber(input);
+	// } else {
+	// 	return ;
+	// }
+
+	// std::cout << "Darkest Secret: ";
+	// std::getline(std::cin, input);
+	// if (isValidField(input, false) == true) {
+	// 	this->_contactList[this->_index].setDarkestSecret(input);
+	// } else {
+	// 	return ;
+	// }
+	std::cout << "|------------------------------------------|" << std::endl;
+	std::cout << "|------------- Contact Saved!!! -----------|" << std::endl;
+	std::cout << "|------------------------------------------|" << std::endl;
 }
 
 void	PhoneBook::searchContact(void) {
@@ -171,12 +247,12 @@ void	PhoneBook::displaySingleContact(std::string input) {
 	if (input.length() == 1 && std::isdigit(input[0])) {
 		int	index = input[0] - '0';
 
-		std::cout << "First Name: " << this->_contactList[index].getFirstName() << std::endl;
-		std::cout << "Last Name: " << this->_contactList[index].getLastName() << std::endl;
-		std::cout << "Nick Name: " << this->_contactList[index].getNickName() << std::endl;
-		std::cout << "Phone Number: " << this->_contactList[index].getPhoneNumber() << std::endl;
-		std::cout << "Darkest Secret: " << this->_contactList[index].getDarkestSecret() << std::endl;
-		std::cout << "+----------.----------.----------.----------+" << std::endl;
+		std::cout << "|First Name\t: " << this->_contactList[index].getFirstName() << std::endl;
+		std::cout << "|Last Name\t: " << this->_contactList[index].getLastName() << std::endl;
+		std::cout << "|Nick Name\t: " << this->_contactList[index].getNickName() << std::endl;
+		std::cout << "|Phone Number\t: " << this->_contactList[index].getPhoneNumber() << std::endl;
+		std::cout << "|Darkest Secret\t: " << this->_contactList[index].getDarkestSecret() << std::endl;
+		std::cout << "+----------.----------.----------.----------+";
 	} else {
 		std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 	}
@@ -197,7 +273,6 @@ void	PhoneBook::displayAllContact(void) {
 		truncate(this->_contactList[i].getNickName());
 		std::cout << std::endl;
 	}
-	std::cout << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 }
 
