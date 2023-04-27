@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 08:41:15 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 07:43:48 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 08:07:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <string>
 
-class Contact {
+class	Contact {
 	private:
 		std::string	_firstName;
 		std::string _lastName;
@@ -24,8 +24,8 @@ class Contact {
 		std::string _darkestSecret;
 
 	public:
-		Contact();
-		~Contact();
+		Contact(void);
+		~Contact(void);
 
 		const std::string	getLastName(void) const;
 		const std::string	getNickName(void) const;

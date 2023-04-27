@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:18:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 08:17:53 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 08:06:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 /**
  * @brief Construct a new Contact:: Contact object
  */
-Contact::Contact() {
+Contact::Contact(void) {
 	return ;
 }
 
 /**
  * @brief Destructor of Contact object
  */
-Contact::~Contact() {
+Contact::~Contact(void) {
 	return ;
 }
 

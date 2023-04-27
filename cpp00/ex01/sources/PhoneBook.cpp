@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 07:56:02 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 08:08:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,7 +245,7 @@ void	PhoneBook::displaySingleContact(std::string input) {
 		std::cout << "|Nick Name\t: " << this->_contactList[index].getNickName() << std::endl;
 		std::cout << "|Phone Number\t: " << this->_contactList[index].getPhoneNumber() << std::endl;
 		std::cout << "|Darkest Secret\t: " << this->_contactList[index].getDarkestSecret() << std::endl;
-		std::cout << "+----------------------------------------+";
+		std::cout << "+------------------------------------------+";
 	} else {
 		std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 	}
