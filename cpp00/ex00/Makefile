@@ -2,9 +2,7 @@ NAME = megaphone
 
 # Compilation
 CC = c++ -g3
-CFLAGS = -std=c++98
-#TODO: Descomentar com as flags de erro
-# CFLAGS = #-Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
