@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 07:18:11 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:25:34 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ PhoneBook::~PhoneBook() {
 /**
  * @brief Welcome message
  */
-void	PhoneBook::menu() {
+void	PhoneBook::menu(bool firstTime) {
 	std::cout << std::endl << std::endl;
 
 	std::cout << "|------------------------------------------|" << std::endl;
-	std::cout << "|-- Welcome to Crappy Awesome PhoneBook  --|" << std::endl;
+	if (firstTime == true) {
+		std::cout << "|-- Welcome to Crappy Awesome PhoneBook  --|" << std::endl;
+	}
 	std::cout << "|----------- Choose one option: -----------|" << std::endl;
 	std::cout << "|------------------------------------------|" << std::endl;
 	std::cout << "|        (1) ADD - Add Contact to list     |" << std::endl;
@@ -216,7 +218,7 @@ void	PhoneBook::displaySingleContact(std::string input) {
 		std::cout << "|Nick Name\t: " << this->_contactList[index].getNickName() << std::endl;
 		std::cout << "|Phone Number\t: " << this->_contactList[index].getPhoneNumber() << std::endl;
 		std::cout << "|Darkest Secret\t: " << this->_contactList[index].getDarkestSecret() << std::endl;
-		std::cout << "+----------.----------.----------.----------+";
+		std::cout << "+----------------------------------------+";
 	} else {
 		std::cout << "Invalid input. Not a digit or out of index size." << std::endl;
 	}

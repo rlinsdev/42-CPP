@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:36:27 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 08:42:28 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:22:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 int	main(void) {
 	PhoneBook pBook;
+	bool firstTime = true;
 
 	std::string value;
 	while (true) {
-		pBook.menu();
+		pBook.menu(firstTime);
+		firstTime = false;
 		std::cout << "> ";
 		getline(std::cin, value);
 

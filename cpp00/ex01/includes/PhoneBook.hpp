@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 14:51:12 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:23:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class PhoneBook {
 		PhoneBook();
 		~PhoneBook();
 
-		void	menu();
+		void	menu(bool firstTime);
 		void	farewell();
 
 		void	addContact(void);
