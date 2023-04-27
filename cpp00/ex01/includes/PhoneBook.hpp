@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 07:23:12 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:47:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,18 @@ class PhoneBook {
 		void	displaySingleContact(std::string input);
 		void	truncate(std::string str);
 		void	headerContacts(void);
+
 		bool	validInput(std::string input, const std::string allowedChar, long unsigned int minLength);
 		bool	isValidField(std::string input, bool justNumber);
+		bool	isValidIndexDetail(std::string input);
 
 		void	handleFirstName(void);
 		void	handleLastName(void);
 		void	handleNickName(void);
 		void	handlePhoneNumber(void);
 		void	handleDarkestSecret(void);
+
+		void	handleDetailContact(void);
 
 
 	public:

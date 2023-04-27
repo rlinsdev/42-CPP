@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 07:25:34 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:56:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,6 +180,37 @@ void	PhoneBook::addContact(void) {
 }
 
 /**
+ * @brief Recursive call to validate input details - Detail Contact
+ *
+ */
+void	PhoneBook::handleDetailContact(void) {
+	std::string input;
+	std::cout << "Put the index to show details info: " << std::endl;
+	std::cout << "> ";
+	std::getline(std::cin, input);
+	if (isValidIndexDetail(input) == false) {
+		handleDetailContact();
+	} else {
+		displaySingleContact(input);
+	}
+}
+
+/**
+ * @brief Responsible to Validate de index called by user
+ * @param input
+ * @return boolean in validation
+ */
+bool	PhoneBook::isValidIndexDetail(std::string input) {
+	int	index = input[0] - '0';
+	if (this->_contactList[index].hasValue() == false) {
+		std::cout << "Invalid index to get detail" << std::endl;
+		return (false);
+	} else {
+		return (true);
+	}
+}
+
+/**
  * @brief Search Contact
  */
 void	PhoneBook::searchContact(void) {
@@ -188,11 +219,7 @@ void	PhoneBook::searchContact(void) {
 		return ;
 	}
 	this->displayAllContact();
-	std::string input;
-	std::cout << "Put the index to show details info: " << std::endl;
-	std::cout << "> ";
-	std::getline(std::cin, input);
-	displaySingleContact(input);
+	handleDetailContact();
 }
 
 /**

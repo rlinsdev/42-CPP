@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 08:41:15 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/26 13:33:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 07:43:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Contact {
 		void	setPhoneNumber(const std::string phoneNumber);
 		void	setDarkestSecret(const std::string darkestSecret);
 
-		bool		hasValue(void);
+		bool	hasValue(void);
 };
 
 #endif
