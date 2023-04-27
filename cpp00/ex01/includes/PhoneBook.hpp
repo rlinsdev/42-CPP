@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:01:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 08:08:39 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 08:14:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ class PhoneBook {
 		void	handleDarkestSecret(void);
 
 		void	handleDetailContact(void);
-
 
 	public:
 		/*Constructor and destructor*/

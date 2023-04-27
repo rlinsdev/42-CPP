@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 08:08:05 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 10:07:20 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,13 +271,12 @@ void	PhoneBook::displayAllContact(void) {
 
 /**
  * @brief Will increment the index of contacts.
- * Subject: "If the user tries to add a 9th contact, replace the oldest one by the new one"
+ * Subject: "If the user tries to add a 9th contact, replace the oldest one by the new one".
+ * Will handle  % 8 to replace the oldest
  */
 void	PhoneBook::indexHandler(void) {
 	this->_index++;
-	if (this->_index == 7) {
-		this->_index = 0;
-	}
+	this->_index = this->_index % 8;
 }
 
 /**
