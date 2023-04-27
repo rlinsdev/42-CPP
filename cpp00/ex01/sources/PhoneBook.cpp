@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 11:06:17 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 10:07:20 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/27 10:36:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	PhoneBook::farewell() {
  */
 bool	PhoneBook::validInput(std::string input, const std::string allowedChar, long unsigned int minLeng) {
 	if (input.length() < minLeng) {
-		std::cout <<  "Invalid input. Mini length not reached." << std::endl;
+		std::cout <<  "Invalid input. Mini length not reached (" << minLeng << ")." << std::endl;
 		return (false);
 	}
 	for (int i = 0; i < (int)input.length(); i++) {
