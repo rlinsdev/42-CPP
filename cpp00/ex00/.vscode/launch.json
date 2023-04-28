@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/megaphone", //path to your programs exe and exe name
-			"args": ["opa1", "args2222"],
+			"args": ["Damnit", " ! ", "Sorry students, I thought this thing was off."],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
@@ -29,7 +29,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceRoot}/megaphone",
-			"args": ["opa1", "args2222"],
+			"args": ["Damnit", " ! ", "Sorry students, I thought this thing was off."],
 			"stopAtEntry": false,
 			"cwd": "${workspaceRoot}",
 			"environment": [],
