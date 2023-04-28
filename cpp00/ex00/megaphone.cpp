@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:31:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/04/27 17:05:53 by rlins            ###   ########.fr       */
+/*   Updated: 2023/04/28 10:09:33 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int main(int argc, char *argv[]) {
 			*it = std::toupper(*it);
 		}
 		std::cout << word;
-		if (i + 1 < argc) {
-			std::cout << " ";
-		}
 	}
 	std::cout << std::endl;
 	return (0);
