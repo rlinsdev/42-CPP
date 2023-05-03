@@ -5,6 +5,10 @@ Namespaces, classes, member functions, stdio streams,
 initialization lists, static, const, and some other basic
 stuff
 
+## CPP01
+Memory allocation, pointers to members,
+references, switch statement
+
 ## Definitions of C++ (Language)
 * **cout** -> Standard OutPut (read it: see out)
 * **cin** -> Standard Input
@@ -66,8 +70,11 @@ $ ./xxxx "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
 ```
 
 
-## CPP01
-bla bla
+## CPP01-Ex00
+BraiiiiiiinnnzzzZ
+```Bash
+$ ./brainz
+```
 
 
 
@@ -75,3 +82,5 @@ bla bla
 # Links
 * [Intranet Videos](https://elearning.intra.42.fr/notions/piscine-c-d00-c-basics/subnotions)
 * [Lucas Video](https://www.youtube.com/watch?v=TnrQMtxPeEg)
+* [Stack-vs-heap-memory-allocation](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/)
+* []()
