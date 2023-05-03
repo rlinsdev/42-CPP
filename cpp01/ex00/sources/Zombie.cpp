@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:33:06 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/03 07:39:04 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/03 08:11:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Zombie::Zombie(void) {
  * @param name
  */
 Zombie::Zombie(std::string name) : _name(name) {
-	std::cout << "The zombie " << this->getName() << " respawn!" << std::endl;
+	std::cout << "The zombie '" << this->getName() << "' respawn!" << std::endl;
 	return ;
 }
 
