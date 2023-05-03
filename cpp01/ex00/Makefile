@@ -13,7 +13,7 @@ SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 
-SRC = main.cpp
+SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 SRCS 	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ 	= $(SRC:.cpp=.o)
