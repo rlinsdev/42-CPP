@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:36:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/02 08:47:12 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/03 07:01:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 class Zombie {
 	private:
 		std::string _name;
-		std::string _getName( void ) const;
-	public:
-		Zombie( void );
-		~Zombie( void );
-	};
+		std::string getName(void) const;
 
+	public:
+		Zombie(void);
+		~Zombie(void);
+
+		void	announce(void);
+	};
 
 #endif
