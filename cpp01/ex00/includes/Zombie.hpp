@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 08:33:06 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/02 08:39:22 by rlins            ###   ########.fr       */
+/*   Created: 2023/05/02 08:36:16 by rlins             #+#    #+#             */
+/*   Updated: 2023/05/02 08:47:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
+#ifndef ZOMBIE_CLASS_H
+# define ZOMBIE_CLASS_H
 
-/**
- * @brief Constructor
- */
-Zombie::Zombie() {
-}
+# include <string>
 
-/**
- * @brief Destructor
- */
-Zombie::~Zombie() {
-}
+class Zombie {
+	private:
+		std::string _name;
+		std::string _getName( void ) const;
+	public:
+		Zombie( void );
+		~Zombie( void );
+	};
+
+
+#endif
