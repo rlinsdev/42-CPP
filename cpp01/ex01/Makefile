@@ -1,4 +1,4 @@
-NAME = brainz
+NAME = moar-brainz
 
 # Collors
 RESET 	= \033[0m
@@ -13,7 +13,7 @@ SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 SRCS 	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ 	= $(SRC:.cpp=.o)
