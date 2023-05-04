@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:33:06 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/03 08:11:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/03 16:59:39 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ Zombie::~Zombie(void) {
  */
 std::string Zombie::getName(void) const {
 	return (this->_name);
+}
+
+/**
+ * @brief Setter - Set Name
+ * @param name
+ */
+void	Zombie::setName(std::string const name) {
+	this->_name = name;
+	return ;
 }
 
 /**

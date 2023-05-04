@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:36:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/03 07:26:52 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/03 16:59:27 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Zombie {
 		Zombie(std::string name);
 		~Zombie(void);
 
+		void	setName(std::string const name);
 		void	announce(void);
 	};
 
