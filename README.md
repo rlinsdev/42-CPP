@@ -83,4 +83,4 @@ $ ./brainz
 * [Intranet Videos](https://elearning.intra.42.fr/notions/piscine-c-d00-c-basics/subnotions)
 * [Lucas Video](https://www.youtube.com/watch?v=TnrQMtxPeEg)
 * [Stack-vs-heap-memory-allocation](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/)
-* []()
+* [cin-ignorenumeric-limitsstreams](https://stackoverflow.com/questions/25020129/cin-ignorenumeric-limitsstreamsizemax-n)
