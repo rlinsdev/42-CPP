@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:33:06 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/03 16:59:39 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/04 07:59:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ void	Zombie::setName(std::string const name) {
  * @brief Zombie announce itself
  */
 void	Zombie::announce(void) {
-	std::cout << this->getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << "Squad "<< this->getName() << " says: " << "BraiiiiiiinnnzzzZ..." << std::endl;
 	return ;
 }
