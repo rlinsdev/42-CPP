@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:19:31 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/05 07:47:01 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/05 08:19:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class HumanB {
 		Weapon const 		_weapon;
 
 	public:
-		HumanB(/* args */);
+		HumanB(std::string const bName);
 		~HumanB();
 
 		void	attack( void ) const;
