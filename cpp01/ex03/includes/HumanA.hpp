@@ -6,19 +6,25 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:12:00 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/05 07:17:40 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/05 07:49:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMAN_A_CLASS_H
 # define HUMAN_A_CLASS_H
 
+# include "Weapon.hpp"
+
 class HumanA {
 	private:
-		/* data */
+		std::string const	_name;
+		Weapon const 		_weapon;
+
 	public:
 		HumanA(/* args */);
 		~HumanA();
+
+		void	attack( void ) const;
 };
 
 
