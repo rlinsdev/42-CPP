@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:21:18 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/05 07:42:40 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/05 08:26:07 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Weapon {
 		std::string _type;
 
 	public:
-		Weapon(/* args */);
-		~Weapon();
+		Weapon(std::string const type);
+		~Weapon(void);
 
 		std::string const	getType(void) const;
 		void				setType(std::string const newType);
