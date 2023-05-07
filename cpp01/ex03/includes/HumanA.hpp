@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:12:00 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/05 08:15:40 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/07 09:47:03 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 class HumanA {
 	private:
 		std::string const	_name;
-		Weapon const 		_weapon;
+		Weapon const		&_weapon;
 
 	public:
-		HumanA(std::string const aName, Weapon const aWepon);
-		~HumanA();
+		HumanA(std::string const aName, Weapon const &aWepon);
+		~HumanA(void);
 
 		void	attack( void ) const;
 };
