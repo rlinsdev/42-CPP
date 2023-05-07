@@ -1,4 +1,4 @@
-NAME = unn_violence
+NAME = un_violence
 
 # Collors
 RESET 	= \033[0m
