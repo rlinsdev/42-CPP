@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:22:37 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/07 13:30:07 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/07 14:51:50 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ Replace::~Replace(void) {
 	return ;
 }
 
+/**
+ * @brief Replace a string from a text
+ * @param content String to be worked
+ * @param s1 Old string
+ * @param s2 New String
+ * @return content changed
+ */
 std::string	Replace::ft_replace(std::string content, std::string s1, std::string s2) {
 	if (s1.empty()) {
 		return (content);
