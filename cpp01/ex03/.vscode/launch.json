@@ -8,7 +8,7 @@
 			"name": "Program", //I named it Pusk because i can
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/unn_violence", //path to your programs exe and exe name
+			"program": "${workspaceFolder}/un_violence", //path to your programs exe and exe name
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -28,7 +28,7 @@
 			"name": "gdb",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceRoot}/unn_violence",
+			"program": "${workspaceRoot}/un_violence",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceRoot}",
