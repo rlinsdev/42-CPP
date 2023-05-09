@@ -1,4 +1,4 @@
-NAME = brainz
+NAME = 00-brainz
 
 # Collors
 RESET 	= \033[0m

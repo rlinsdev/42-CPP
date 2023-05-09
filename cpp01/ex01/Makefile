@@ -1,4 +1,4 @@
-NAME = moar-brainz
+NAME = 01-moar-brainz
 
 # Collors
 RESET 	= \033[0m

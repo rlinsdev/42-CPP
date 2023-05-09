@@ -1,4 +1,4 @@
-NAME = brain
+NAME = 02-brain
 
 # Compilation
 CC = c++ -g3
