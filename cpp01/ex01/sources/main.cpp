@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:05:14 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/04 08:11:32 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:31:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <limits> 		// max
+#include <limits>
 #include <string>
 #include "Zombie.hpp"
 
 #define MAX_HORDE 10000
-#define MIN_HORDE -10000
+#define MIN_HORDE 1
 
 Zombie *zombieHorde(int N, std::string name);
 
