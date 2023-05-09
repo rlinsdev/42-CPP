@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:12:00 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/07 09:51:56 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:02:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A_CLASS_H
-# define HUMAN_A_CLASS_H
+#ifndef HUMAN_A_H
+# define HUMAN_A_H
 
 # include "Weapon.hpp"
 

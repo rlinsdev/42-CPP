@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 08:36:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/03 16:59:27 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:02:42 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_H
-# define ZOMBIE_CLASS_H
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
 
 # include <string>
 

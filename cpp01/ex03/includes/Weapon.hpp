@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 07:21:18 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/07 09:17:29 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/09 08:03:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_CLASS_H
-# define WEAPON_CLASS_H
+#ifndef WEAPON_H
+# define WEAPON_H
 
 # include <string>
 
