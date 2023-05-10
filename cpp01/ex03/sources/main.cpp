@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 06:55:30 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/07 09:56:12 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/10 07:14:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ int	main(void) {
 		club2.setType("some other type of club");
 		jim.attack();
 
-		std::cout << std::endl << "------------ ******* ------------" << std::endl;
+		std::cout << "------------ ******* ------------" << std::endl;
+
+		std::cout << std::endl << "----- Human B  (No weapon) ------" << std::endl;
+		HumanB jeniffer("Jeniffer");
+		jeniffer.attack();
+		std::cout << "------------ ******* ------------" << std::endl;
+
 
 	return (0);
 }
