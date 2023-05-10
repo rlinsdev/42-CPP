@@ -70,10 +70,26 @@ $ ./xxxx "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
 ```
 
 
-## CPP01-Ex00
-BraiiiiiiinnnzzzZ
+## CPP01-Leaks of memory
 ```Bash
-$ ./brainz
+#Valgrind ex00
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./00-brainz
+
+#Valgrind ex01
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./01-moar-brainz
+
+#Valgrind ex02
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./02-brain
+
+#Valgrind ex03
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./03-un-violence
+
+#Valgrind ex04
+#code arq / add something
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./04-replace arq a X
+
+#Valgrind ex05
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./05-harl
 ```
 
 
