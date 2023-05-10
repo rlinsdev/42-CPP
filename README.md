@@ -86,4 +86,5 @@ $ ./brainz
 * [cin-ignorenumeric-limitsstreams](https://stackoverflow.com/questions/25020129/cin-ignorenumeric-limitsstreamsizemax-n)
 * [cin.ignore()] (https://pt.stackoverflow.com/questions/319622/quando-usar-o-cin-ignore-em-c)
 * [Change name FSoutput] (https://www.techiedelight.com/convert-std-string-const-char-cpp/)
+* [] (https://www.geeksforgeeks.org/delete-in-c/)
 *
