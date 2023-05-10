@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 08:33:13 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/07 14:47:26 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/10 07:19:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 		return (1);
 	}
 
-	// Read a file
+	// Read a file (Input file Stream)
 	std::ifstream ifs(argv[1]);
 	if (!ifs.is_open()) {
 		msgOpenFile();
@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
 	nmOutput.append(".replace");
 	const char *c = nmOutput.c_str();
 
-	// Output. Just work wit char the name.
+	// Output. Just work wit char the name (Output FileStream).
 	std::ofstream ofs(c);
 
 	if (!ofs.is_open()) {
