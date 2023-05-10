@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 06:56:03 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/08 08:09:50 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/10 07:35:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ void	Harl::warning(void) {
 }
 
 /**
- * @brief
- *
- * @param level
+ * @brief Verify the level passed by param, and call the function using
+ * pointers to member functions (mandatory)
+ * @param level level chosen
  */
 void	Harl::complain(std::string level) {
 
