@@ -100,7 +100,7 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./05-har
 * [Lucas Video](https://www.youtube.com/watch?v=TnrQMtxPeEg)
 * [Stack-vs-heap-memory-allocation](https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/)
 * [cin-ignorenumeric-limitsstreams](https://stackoverflow.com/questions/25020129/cin-ignorenumeric-limitsstreamsizemax-n)
-* [cin.ignore()] (https://pt.stackoverflow.com/questions/319622/quando-usar-o-cin-ignore-em-c)
-* [Change name FSoutput] (https://www.techiedelight.com/convert-std-string-const-char-cpp/)
-* [] (https://www.geeksforgeeks.org/delete-in-c/)
+* [cin.ignore](https://pt.stackoverflow.com/questions/319622/quando-usar-o-cin-ignore-em-c)
+* [Change name FSoutput](https://www.techiedelight.com/convert-std-string-const-char-cpp/)
+* [delete key word](https://www.geeksforgeeks.org/delete-in-c/)
 *
