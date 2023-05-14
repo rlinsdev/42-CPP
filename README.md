@@ -9,6 +9,10 @@ stuff
 Memory allocation, pointers to members,
 references, switch statement
 
+## CPP02
+Ad-hoc polymorphism, operator overloading
+and Orthodox Canonical class form
+
 ## Definitions of C++ (Language)
 * **cout** -> Standard OutPut (read it: see out)
 * **cin** -> Standard Input
@@ -45,8 +49,6 @@ Knows as Getters and Setters too. They help to control access to class data and 
 Generate function to get and set a (private) variables values.
 
 
-
-
 ## CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
@@ -57,19 +59,6 @@ $ make run
 #or
 $ ./megaphone "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
 ```
-
-### CPP00-Ex01 - My Awesome PhoneBook
-BLABLABLABLA Write a program that behaves like a crappy awesome phonebook software.
-
-### Usage
-BLABLABLABLA
-```Bash
-$ make run
-#or
-$ ./xxxx "String to" "be CapTaliZed" "VERIFY if everything well be FiNe!!00"
-```
-
-
 ## CPP01-Leaks of memory
 ```Bash
 #Valgrind ex00
@@ -103,4 +92,8 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./05-har
 * [cin.ignore](https://pt.stackoverflow.com/questions/319622/quando-usar-o-cin-ignore-em-c)
 * [Change name FSoutput](https://www.techiedelight.com/convert-std-string-const-char-cpp/)
 * [delete key word](https://www.geeksforgeeks.org/delete-in-c/)
-*
+* [Article 1](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html)
+* [Article 2](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html)
+* [Article 3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html)
+* [erkeley](https://en.wikipedia.org/wiki/University_of_California,_Berkeley#Notable_alumni.2C_faculty.2C_and_staff)
+* [Article 4 (Berkeley)](https://inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html)
