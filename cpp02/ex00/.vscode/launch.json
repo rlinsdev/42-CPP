@@ -8,7 +8,7 @@
 			"name": "Program", //I named it Pusk because i can
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/brainz", //path to your programs exe and exe name
+			"program": "${workspaceFolder}/00-fixed", //path to your programs exe and exe name
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
@@ -28,7 +28,7 @@
 			"name": "gdb",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceRoot}/brainz",
+			"program": "${workspaceRoot}/00-fixed",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceRoot}",
