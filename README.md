@@ -53,6 +53,22 @@ Generate function to get and set a (private) variables values.
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
 
+## CPP02-Ex00 - Fixed
+* __"But floating point numbers have poor accuracy"__
+* __"If ints are like bricks, then floats might be thought of as silly putty."__
+* __"Thankfully, doubles have enough precision to preserve a whole 32-bit integer"__
+* "__As we will see later, fixed point arithmetic is much faster than floating point arithmetic.__
+
+### Binary point:
+![Binary Point](./img/Binary%20Point.png)
+
+### Fixed point arithmetic:
+* The benefit of fixed point arithmetic is that they are as straight-forward and efficient as integers arithmetic in computers. We can reuse all the hardware built to for integer arithmetic to perform real numbers arithmetic using fixed point representation. In other word, fixed point arithmetic comes for free on computers.
+* The disadvantage of fixed point number, is than of course the loss of range and precision when compare with floating point number representations. For example, in a fixed<8,1> representation, our fractional part is only precise to a quantum of 0.5. We cannot represent number like 0.75. We can represent 0.75 with fixed<8,2>, but then we loose range on the integer part.
+
+
+
+
 ### CPP00-Ex00 -Usage
 ```Bash
 $ make run
