@@ -92,6 +92,7 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./05-har
 * [cin.ignore](https://pt.stackoverflow.com/questions/319622/quando-usar-o-cin-ignore-em-c)
 * [Change name FSoutput](https://www.techiedelight.com/convert-std-string-const-char-cpp/)
 * [delete key word](https://www.geeksforgeeks.org/delete-in-c/)
+
 * [Article 1](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point.html)
 * [Article 2](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_representation.html)
 * [Article 3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html)
