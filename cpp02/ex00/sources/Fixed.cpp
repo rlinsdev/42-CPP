@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/18 07:51:59 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/18 08:24:09 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,25 @@ Fixed::~Fixed(void) {
 Fixed & Fixed::operator=(Fixed const & src) {
 	std::cout << "Copy assignment operator called." << std::endl;
 	if (this != &src) {
-		// TODO
+		this->_raw = src.getRawBits();
 	}
 	return (*this);
+}
+
+/**
+ * @brief Getter
+ * @return int
+ */
+int		Fixed::getRawBits(void) const {
+	std::cout << "getRawBits member function called." << std::endl;
+	return (this->_raw);
+}
+
+/**
+ * @brief Setter
+ */
+void	Fixed::setRawBits(int const _raw) {
+	std::cout << "SetRawBits called." << std::endl;
+	this->_raw = _raw;
+	return ;
 }
