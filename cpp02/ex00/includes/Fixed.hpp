@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/17 06:23:04 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/18 07:18:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ class Fixed {
 
 	public:
 		Fixed(void);
-		// Zombie(std::string name);
+		Fixed( Fixed const & src);
 		~Fixed(void);
 
-		// void	announce(void);
+		Fixed &	operator=( Fixed const & src);
+
 	};
 
 #endif
