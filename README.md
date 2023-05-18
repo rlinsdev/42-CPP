@@ -48,6 +48,13 @@ Is a feature that allows you to specify the initial values for the member variab
 Knows as Getters and Setters too. They help to control access to class data and maintain data encapsulation.
 Generate function to get and set a (private) variables values.
 
+### Orthodox Canonical Form
+A class should have a
+* Default constructor
+* Copy constructor
+* Destructor
+* An assignment operator (=)
+
 
 ## CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
