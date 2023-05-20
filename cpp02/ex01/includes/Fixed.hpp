@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/20 08:19:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/20 08:40:23 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ class Fixed {
 		float	toFloat(void) const;
 		int		toInt(void) const;
 	};
+
+std::ostream& operator<<(std::ostream& os, const Fixed& number);
 
 #endif

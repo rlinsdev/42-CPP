@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/20 08:20:53 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/20 08:46:18 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,15 @@ float	Fixed::toFloat(void) const {
  */
 int		Fixed::toInt(void) const  {
 	return (this->_raw >> _frac_nbr_bits);
+}
+
+/**
+ * @brief Overload of operator <<
+ * @param os
+ * @param number
+ * @return std::ostream&
+ */
+std::ostream& operator<<(std::ostream& os, const Fixed& number) {
+	os << number.toFloat();
+	return (os);
 }
