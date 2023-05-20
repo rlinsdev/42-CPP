@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/18 07:55:30 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/18 16:05:12 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,21 @@
 
 int	main(void) {
 	// Code from PDF
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
 
-	c = b;
-
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+	Fixed
+	a;
+	Fixed const b(0);
+	Fixed const c(42.42f);
+	Fixed const d(b);
+	// a = Fixed( 1234.4321f );
+	// std::cout << "a is " << a << std::endl;
+	// std::cout << "b is " << b << std::endl;
+	// std::cout << "c is " << c << std::endl;
+	// std::cout << "d is " << d << std::endl;
+	// std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	// std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	// std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	// std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return (0);
 }
