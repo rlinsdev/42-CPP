@@ -1,4 +1,4 @@
-NAME = 00-fixed
+NAME = 01-fixed
 
 # Collors
 RESET 	= \033[0m
