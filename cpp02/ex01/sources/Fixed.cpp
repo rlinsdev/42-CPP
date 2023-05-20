@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/18 08:52:44 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/20 08:20:53 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Fixed::Fixed(void) : _raw(0) {
 	std::cout << "Default constructor called" << std::endl;
 	return ;
 }
-
 
 /**
  * @brief Copy constructor
@@ -85,4 +84,22 @@ void	Fixed::setRawBits(int const _raw) {
 	std::cout << "SetRawBits called." << std::endl;
 	this->_raw = _raw;
 	return ;
+}
+
+/**
+ * @brief To Float Function.
+ * Converts the fixed-point value to a floating-point value
+ * @return float
+ */
+float	Fixed::toFloat(void) const {
+	return ((float)this->_raw / (1 << _frac_nbr_bits));
+}
+
+/**
+ * @brief To int Function
+ * Converts the fixed-point value to an integer value.
+ * @return int
+ */
+int		Fixed::toInt(void) const  {
+	return (this->_raw >> _frac_nbr_bits);
 }
