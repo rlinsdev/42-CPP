@@ -121,3 +121,4 @@ valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./05-har
 * [Article 3](https://www.cprogramming.com/tutorial/floating_point/understanding_floating_point_printing.html)
 * [erkeley](https://en.wikipedia.org/wiki/University_of_California,_Berkeley#Notable_alumni.2C_faculty.2C_and_staff)
 * [Article 4 (Berkeley)](https://inst.eecs.berkeley.edu//~cs61c/sp06/handout/fixedpt.html)
+* [Operator Overloading](https://en.cppreference.com/w/cpp/language/operators)
