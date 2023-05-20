@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/18 08:24:09 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/18 08:52:44 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Fixed.hpp>
-#include <string>
+#include <cmath>
 #include <iostream>
 
 /**
@@ -29,6 +29,24 @@ Fixed::Fixed(void) : _raw(0) {
 Fixed::Fixed(Fixed const & src) {
 	std::cout << "Copy constructor called." << std::endl;
 	*this = src;
+	return ;
+}
+
+/**
+ * @brief Construct - Integer parameter
+ * @param n
+ */
+Fixed::Fixed(int const n): _raw(n << _frac_nbr_bits) {
+	std::cout << "Int constructor called." << std::endl;
+	return ;
+}
+
+/**
+ * @brief Construct - Float parameter
+ * @param f
+ */
+Fixed::Fixed(float const f): _raw(roundf(f * (1 << _frac_nbr_bits))) {
+	std::cout << "Float constructor called." << std::endl;
 	return ;
 }
 
