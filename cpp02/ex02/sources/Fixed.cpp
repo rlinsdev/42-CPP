@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/20 17:13:44 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/25 08:43:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #include <cmath>
 #include <iostream>
 
+/******************************************************************************/
+/*BEGIN - Constructor and destructor*/
+/******************************************************************************/
 /**
  * @brief Default Constructor
  */
@@ -36,7 +39,7 @@ Fixed::Fixed(Fixed const & src) {
  * @param n
  */
 Fixed::Fixed(int const n): _raw(n << _frac_nbr_bits) {
-	std::cout << "Int constructor called." << std::endl;
+	// std::cout << "Int constructor called." << std::endl;
 	return ;
 }
 
@@ -45,7 +48,7 @@ Fixed::Fixed(int const n): _raw(n << _frac_nbr_bits) {
  * @param f
  */
 Fixed::Fixed(float const f): _raw(roundf(f * (1 << _frac_nbr_bits))) {
-	std::cout << "Float constructor called." << std::endl;
+	// std::cout << "Float constructor called." << std::endl;
 	return ;
 }
 
@@ -53,10 +56,17 @@ Fixed::Fixed(float const f): _raw(roundf(f * (1 << _frac_nbr_bits))) {
  * @brief Destructor
  */
 Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 	return ;
 }
 
+/******************************************************************************/
+/*END - Constructor and destructor*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*BEGIN - comparison Operators*/
+/******************************************************************************/
 /**
  * @brief Copy assignment operator
  */
@@ -67,6 +77,51 @@ Fixed & Fixed::operator=(Fixed const & src) {
 	}
 	return (*this);
 }
+bool	Fixed::operator>(const Fixed& value) {
+	if (this->_raw > value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+bool	Fixed::operator<(const Fixed& value) {
+	if (this->_raw < value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+bool	Fixed::operator<=(const Fixed& value) {
+	if (this->_raw <= value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+bool	Fixed::operator>=(const Fixed& value) {
+	if (this->_raw >= value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+bool	Fixed::operator==(const Fixed& value) {
+	if (this->_raw == value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+bool	Fixed::operator!=(const Fixed& value) {
+	if (this->_raw != value._raw) {
+		return (true);
+	} else {
+		return (false);
+	}
+}
+/******************************************************************************/
+/*END - comparison Operators*/
+/******************************************************************************/
 
 /**
  * @brief Getter
@@ -81,7 +136,7 @@ int		Fixed::getRawBits(void) const {
  * @brief Setter
  */
 void	Fixed::setRawBits(int const _raw) {
-	std::cout << "SetRawBits called." << std::endl;
+	// std::cout << "SetRawBits called." << std::endl;
 	this->_raw = _raw;
 	return ;
 }
