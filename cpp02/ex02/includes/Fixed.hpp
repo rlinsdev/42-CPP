@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/25 08:38:59 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/26 07:08:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@ class Fixed {
 
 		Fixed &	operator=( Fixed const & src);
 
-		// Operators
+		// Comparison Operators
 		bool	operator>(const Fixed& value);
 		bool	operator<(const Fixed& value);
 		bool	operator>=(const Fixed& value);
 		bool	operator<=(const Fixed& value);
 		bool	operator==(const Fixed& value);
 		bool	operator!=(const Fixed& value);
+
+		// Arithmetic Operators
+		Fixed	operator+(const Fixed& value);
+		Fixed	operator-(const Fixed& value);
+		Fixed	operator/(const Fixed& value);
+		Fixed	operator*(const Fixed& value);
+
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const _raw);

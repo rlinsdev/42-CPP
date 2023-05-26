@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/25 08:43:02 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/26 07:44:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,25 @@ bool	Fixed::operator!=(const Fixed& value) {
 }
 /******************************************************************************/
 /*END - comparison Operators*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*BEGIN - arithmetic Operators*/
+/******************************************************************************/
+Fixed	Fixed::operator+(const Fixed& value) {
+	return (Fixed(this->toFloat() + value.toFloat()));
+}
+Fixed	Fixed::operator-(const Fixed& value) {
+	return (Fixed(this->toFloat() - value.toFloat()));
+}
+Fixed	Fixed::operator*(const Fixed& value) {
+	return (Fixed(this->toFloat() * value.toFloat()));
+}
+Fixed	Fixed::operator/(const Fixed& value) {
+	return (Fixed(this->toFloat() / value.toFloat()));
+}
+/******************************************************************************/
+/*END - arithmetic Operators*/
 /******************************************************************************/
 
 /**
