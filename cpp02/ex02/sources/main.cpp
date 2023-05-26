@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/25 08:39:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/26 07:46:28 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,69 @@
 
 void	subject_test(void);
 void	comparison_test(void);
+void	arithmetic_test(void);
 
 int	main(void) {
 
-	comparison_test();
-	//subject_test();
+	// comparison_test();
+	arithmetic_test();
 
+
+	//subject_test();
 	return (0);
 }
 
 /******************************************************************************/
-/*BEGIN - Operators test*/
+/*BEGIN - arithmetic Operators test*/
+/******************************************************************************/
+void	arith_add(int vl_a, int vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << ". Value of b: " << b << std::endl;
+	Fixed result = a + b;
+	std::cout << "Arithmetic Operator Add (+) called. So... a + b = " << result.toInt() << std::endl;
+}
+void	arith_sub(float vl_a, float vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << ". Value of b: " << b << std::endl;
+	Fixed result = a - b;
+	std::cout << "Arithmetic Operator Subtract (-) called. So... a - b = " << result.toFloat() << std::endl;
+}
+void	arith_mult(float vl_a, float vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << ". Value of b: " << b << std::endl;
+	Fixed result = a * b;
+	std::cout << "Arithmetic Operator Multiplication (*) called. So... a * b = " << result.toFloat() << std::endl;
+}
+void	arith_div(float vl_a, float vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << ". Value of b: " << b << std::endl;
+	Fixed result = a / b;
+	std::cout << "Arithmetic Operator Division (/) called. So... a / b = " << result.toFloat() << std::endl;
+}
+
+void	arithmetic_test(void) {
+	std::cout << "\t**** Arithmetic Comparison test ****" << std::endl;
+
+	arith_add(20, 10);
+	arith_sub(42.5f, 2.5f);
+	arith_mult(5, 2);
+	arith_div(100, 2);
+}
+
+/******************************************************************************/
+/*END - arithmetic Operators test*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*BEGIN - comparison Operators test*/
 /******************************************************************************/
 void	comp_greater(float vl_a, int vl_b) {
 	Fixed a(vl_a);
@@ -88,7 +140,7 @@ void	comp_diff(int vl_a, int vl_b) {
 }
 
 void	comparison_test(void) {
-	std::cout << "\t**** Comparison test ****" << std::endl;
+	std::cout << "\t**** Comparison Operator test ****" << std::endl;
 
 	comp_greater(42.5f, 0);
 	comp_less(42.5f, 50);
@@ -98,7 +150,7 @@ void	comparison_test(void) {
 	comp_diff(9, 12);
 }
 /******************************************************************************/
-/*END - Operators test*/
+/*END - comparison Operators test*/
 /******************************************************************************/
 
 /**
