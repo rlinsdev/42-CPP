@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/30 06:59:01 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 08:01:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,61 @@ void	subject_test(void);
 void	comparison_test(void);
 void	arithmetic_test(void);
 void	increment_decrement_test(void);
+void	min_max_test();
 
 int	main(void) {
 
-	// comparison_test();
-	// arithmetic_test();
+	comparison_test();
+	arithmetic_test();
 	increment_decrement_test();
-
+	min_max_test();
 
 	//subject_test();
 	return (0);
 }
+
+
+/******************************************************************************/
+/*BEGIN - Min Max test test*/
+/******************************************************************************/
+
+void	max(int vl_a, int vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << " Value b: " << b << ".: max: " << Fixed::max(a, b) << std::endl;
+}
+void	max_const(int vl_a, int vl_b) {
+	Fixed const a(vl_a);
+	Fixed const b(vl_b);
+
+	std::cout << "Value a: " << a << " Value b: " << b << ".: max: " << Fixed::max(a, b) << std::endl;
+}
+void	min(int vl_a, int vl_b) {
+	Fixed a(vl_a);
+	Fixed b(vl_b);
+
+	std::cout << "Value a: " << a << " Value b: " << b << ".: min: " << Fixed::min(a, b) << std::endl;
+}
+void	min_const(int vl_a, int vl_b) {
+	Fixed const a(vl_a);
+	Fixed const b(vl_b);
+
+	std::cout << "Value a: " << a << " Value b: " << b << ".: min: " << Fixed::min(a, b) << std::endl;
+}
+
+void	min_max_test() {
+	std::cout << "\t**** Inc/Decrement test ****" << std::endl;
+
+	max(1, 5);
+	max_const(12, 52);
+	min(12, 6);
+	min_const(200, 8);
+}
+/******************************************************************************/
+/*END - Min Max test test*/
+/******************************************************************************/
+
 
 /******************************************************************************/
 /*BEGIN - Increment  / Decrement Operators test*/
@@ -68,8 +112,6 @@ void	increment_decrement_test(void) {
 	pre_decrement();
 	pos_decrement();
 }
-
-
 
 /******************************************************************************/
 /*END - Increment  / Decrement Operators test*/

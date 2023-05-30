@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/30 07:00:40 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 07:23:32 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ class Fixed {
 		Fixed	operator++(int);
 		Fixed	operator--(void);
 		Fixed	operator--(int);
+
+		static Fixed		&max(Fixed& obj1, Fixed& obj2);
+		static Fixed		&min(Fixed& obj1, Fixed& obj2);
+		static Fixed const	&max(const Fixed& obj1, const Fixed& obj2);
+		static Fixed const	&min(const Fixed& obj1, const Fixed& obj2);
 
 
 		int		getRawBits(void) const;

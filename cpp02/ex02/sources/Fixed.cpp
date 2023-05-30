@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/30 06:59:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 07:35:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,6 +167,42 @@ Fixed	Fixed::operator--(int) { // value--
 }
 /******************************************************************************/
 /*END - Increment/Decrement Operators*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*BEGIN - Min and Max*/
+/******************************************************************************/
+
+Fixed&	Fixed::max(Fixed& obj1, Fixed& obj2) {
+	if (obj1.getRawBits() > obj2.getRawBits()) {
+		return (obj1);
+	}
+	return (obj2);
+}
+
+Fixed&	Fixed::min(Fixed& obj1, Fixed& obj2) {
+	if (obj1.getRawBits() < obj2.getRawBits()) {
+		return (obj1);
+	}
+	return (obj2);
+}
+
+Fixed const&	Fixed::max(const Fixed& obj1, const Fixed& obj2) {
+	if (obj1.getRawBits() > obj2.getRawBits()) {
+		return (obj1);
+	}
+	return (obj2);
+}
+
+Fixed const&	Fixed::min(const Fixed& obj1, const Fixed& obj2) {
+	if (obj1.getRawBits() < obj2.getRawBits()) {
+		return (obj1);
+	}
+	return (obj2);
+}
+
+/******************************************************************************/
+/*END - Min and Max*/
 /******************************************************************************/
 
 /**
