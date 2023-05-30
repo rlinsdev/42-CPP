@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/26 08:51:20 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 06:59:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,16 @@ Fixed	Fixed::operator++(int) { // value++
 	Fixed	tmp(*this);
 
 	++(*this);
+	return (tmp);
+}
+Fixed	Fixed::operator--(void) { // --value
+	this->_raw -= 1;
+	return (*this);
+}
+Fixed	Fixed::operator--(int) { // value--
+	Fixed	tmp(*this);
+
+	--(*this);
 	return (tmp);
 }
 /******************************************************************************/

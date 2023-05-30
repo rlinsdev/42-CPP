@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/26 08:50:16 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 06:59:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,27 @@ void	pos_increment() {
 	a++;
 	std::cout << "Value a Pos incremented: " << a.getRawBits() << std::endl;
 }
+void	pre_decrement() {
+	Fixed a;
+	std::cout << "Value a: " << a.getRawBits() << std::endl;
+	--a;
+	std::cout << "Value a Pre incremented: " << a.getRawBits() << std::endl;
+
+}
+void	pos_decrement() {
+	Fixed a;
+	std::cout << "Value a: " << a.getRawBits() << std::endl;
+	a--;
+	std::cout << "Value a Pos incremented: " << a.getRawBits() << std::endl;
+}
 
 void	increment_decrement_test(void) {
 	std::cout << "\t**** Inc/Decrement test ****" << std::endl;
 
 	pre_increment();
 	pos_increment();
+	pre_decrement();
+	pos_decrement();
 }
 
 

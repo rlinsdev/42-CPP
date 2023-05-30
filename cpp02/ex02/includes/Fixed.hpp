@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:19 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/26 08:04:52 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 07:00:40 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ class Fixed {
 		// Increment Decrement Operators
 		Fixed	operator++(void);
 		Fixed	operator++(int);
+		Fixed	operator--(void);
+		Fixed	operator--(int);
 
 
 		int		getRawBits(void) const;
