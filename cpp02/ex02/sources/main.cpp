@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/26 07:46:28 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/26 08:50:16 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,48 @@
 void	subject_test(void);
 void	comparison_test(void);
 void	arithmetic_test(void);
+void	increment_decrement_test(void);
 
 int	main(void) {
 
 	// comparison_test();
-	arithmetic_test();
+	// arithmetic_test();
+	increment_decrement_test();
 
 
 	//subject_test();
 	return (0);
 }
+
+/******************************************************************************/
+/*BEGIN - Increment  / Decrement Operators test*/
+/******************************************************************************/
+void	pre_increment() {
+	Fixed a;
+	std::cout << "Value a: " << a.getRawBits() << std::endl;
+	++a;
+	std::cout << "Value a Pre incremented: " << a.getRawBits() << std::endl;
+
+}
+void	pos_increment() {
+	Fixed a;
+	std::cout << "Value a: " << a.getRawBits() << std::endl;
+	a++;
+	std::cout << "Value a Pos incremented: " << a.getRawBits() << std::endl;
+}
+
+void	increment_decrement_test(void) {
+	std::cout << "\t**** Inc/Decrement test ****" << std::endl;
+
+	pre_increment();
+	pos_increment();
+}
+
+
+
+/******************************************************************************/
+/*END - Increment  / Decrement Operators test*/
+/******************************************************************************/
 
 /******************************************************************************/
 /*BEGIN - arithmetic Operators test*/

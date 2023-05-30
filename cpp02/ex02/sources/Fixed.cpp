@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:14:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/26 07:44:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/26 08:51:20 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  * @brief Default Constructor
  */
 Fixed::Fixed(void) : _raw(0) {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
@@ -29,7 +29,7 @@ Fixed::Fixed(void) : _raw(0) {
  * @brief Copy constructor
  */
 Fixed::Fixed(Fixed const & src) {
-	std::cout << "Copy constructor called." << std::endl;
+	// std::cout << "Copy constructor called." << std::endl;
 	*this = src;
 	return ;
 }
@@ -71,7 +71,7 @@ Fixed::~Fixed(void) {
  * @brief Copy assignment operator
  */
 Fixed & Fixed::operator=(Fixed const & src) {
-	std::cout << "Copy assignment operator called." << std::endl;
+	// std::cout << "Copy assignment operator called." << std::endl;
 	if (this != &src) {
 		this->_raw = src.getRawBits();
 	}
@@ -140,6 +140,23 @@ Fixed	Fixed::operator/(const Fixed& value) {
 }
 /******************************************************************************/
 /*END - arithmetic Operators*/
+/******************************************************************************/
+
+/******************************************************************************/
+/*BEGIN - Increment/Decrement Operators*/
+/******************************************************************************/
+Fixed	Fixed::operator++(void) { // ++value
+	this->_raw += 1;
+	return (*this);
+}
+Fixed	Fixed::operator++(int) { // value++
+	Fixed	tmp(*this);
+
+	++(*this);
+	return (tmp);
+}
+/******************************************************************************/
+/*END - Increment/Decrement Operators*/
 /******************************************************************************/
 
 /**
