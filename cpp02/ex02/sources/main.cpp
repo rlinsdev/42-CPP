@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 06:18:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/05/30 08:01:05 by rlins            ###   ########.fr       */
+/*   Updated: 2023/05/30 08:04:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	min_max_test();
 
 int	main(void) {
 
-	comparison_test();
-	arithmetic_test();
-	increment_decrement_test();
-	min_max_test();
+	// comparison_test();
+	// arithmetic_test();
+	// increment_decrement_test();
+	// min_max_test();
 
-	//subject_test();
+	subject_test();
 	return (0);
 }
 
@@ -246,15 +246,15 @@ void	comparison_test(void) {
  * @brief Subject test - Code from PDF
  */
 void	subject_test(void) {
-	// std::cout << "Subject test" << std::endl;
-	// Fixed a;
-	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << "Subject test" << std::endl;
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	// std::cout << a << std::endl;
-	// std::cout << ++a << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << a++ << std::endl;
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 }
