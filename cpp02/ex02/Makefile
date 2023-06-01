@@ -15,6 +15,9 @@ INC_PATH = ./includes/
 
 SRC = main.cpp Fixed.cpp
 
+#Check Leak memory
+LEAK = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s
+
 SRCS 	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ 	= $(SRC:.cpp=.o)
 OBJS	= $(addprefix $(OBJ_PATH), $(OBJ))
@@ -34,6 +37,9 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $@ $(INC)
 	@echo "$(GREEN)Build Successful$(RESET)"
+
+valgrind:
+	$(LEAK) ./02-fixed
 
 clean:
 	@echo "$(RED)Cleaning objects...$(RESET)"
