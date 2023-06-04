@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/04 07:51:52 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/04 10:01:07 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,26 @@
 /**
  * @brief Default Constructor
  */
-ClapTrap::ClapTrap(void) {
+ClapTrap::ClapTrap(void) :
+	_name("unnamed"),
+	_hitPoints(ClapTrap::c_hitPoints),
+	_energyPoints(ClapTrap::c_energyPoints),
+	_attackDamage(ClapTrap::c_attackDamagePoints) {
 	// std::cout << "Default constructor called" << std::endl;
 	return ;
 }
 
+/**
+ * @brief Default constructor - Name by param
+ * @param name
+ */
+ClapTrap::ClapTrap(std::string name) :
+	_name(name),
+	_hitPoints(ClapTrap::c_hitPoints),
+	_energyPoints(ClapTrap::c_energyPoints),
+	_attackDamage(ClapTrap::c_attackDamagePoints) {
+	std::cout << "Cl4p-tp named " << name << " was constructed" << std::endl;
+}
 
 /**
  * @brief Copy constructor
@@ -36,7 +51,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
  * @brief Destructor
  */
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Cl4p-tp " << this->_name << " destroyed" << std::endl;
 	return ;
 }
 
@@ -44,12 +59,31 @@ ClapTrap::~ClapTrap(void) {
  * @brief Copy assignment operator
  */
 ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
-	std::cout << "Copy assignment operator called." << std::endl;
 	if (this != &src) {
-		// this->_raw = src.getRawBits();
+		this->_name = src.getName();
+
 	}
 	return (*this);
 }
+
+/******************************************************************************/
+/*BEGIN - Getters*/
+/******************************************************************************/
+std::string ClapTrap::getName(void) const {
+	return (this->_name);
+}
+unsigned int ClapTrap::getHitPoints(void) const {
+	return (this->_hitPoints);
+}
+unsigned int ClapTrap::getEnergyPoints(void) const {
+	return (this->_energyPoints);
+}
+unsigned int ClapTrap::getAttackDamage(void) const {
+	return (this->_attackDamage);
+}
+/******************************************************************************/
+/*END -MGetters*/
+/******************************************************************************/
 
 // /**
 //  * @brief Getter
