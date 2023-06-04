@@ -13,6 +13,10 @@ references, switch statement
 Ad-hoc polymorphism, operator overloading
 and Orthodox Canonical class form
 
+## CPP03
+Inheritance, virtual.
+cl4p-tp - Borderlands?
+
 ## Definitions of C++ (Language)
 * **cout** -> Standard OutPut (read it: see out)
 * **cin** -> Standard Input
