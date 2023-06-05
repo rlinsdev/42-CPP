@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:11 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/04 10:00:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/05 08:13:49 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,20 @@ class ClapTrap {
 		static int const	c_energyPoints = 10;
 		static int const	c_attackDamagePoints = 0;
 
+		// Constructor and destructor
 		ClapTrap(std::string name);
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap(void);
 
+		// Operator by Orthodox Canonical Form
 		ClapTrap &	operator=(ClapTrap const & src);
 
-		// Getters
+		// Getters and setters
 		std::string		getName(void) const;
 		unsigned int	getHitPoints(void) const;
 		unsigned int	getEnergyPoints(void) const;
 		unsigned int	getAttackDamage(void) const;
+		void			setAttackDamage(unsigned int value);
 
 		// Public members from subject
 		void		attack(std::string & target);

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/05 07:12:08 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/05 08:03:28 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(std::string name) :
 	_hitPoints(ClapTrap::c_hitPoints),
 	_energyPoints(ClapTrap::c_energyPoints),
 	_attackDamage(ClapTrap::c_attackDamagePoints) {
-	std::cout << "Cl4p-tp named " << name << " was constructed" << std::endl;
+	std::cout << "Cl4p-tp named **" << name << " was constructed" << std::endl;
 	return ;
 }
 
@@ -52,7 +52,7 @@ ClapTrap::ClapTrap(ClapTrap const & src) {
  * @brief Destructor
  */
 ClapTrap::~ClapTrap(void) {
-	std::cout << "Cl4p-tp " << this->_name << " destroyed" << std::endl;
+	std::cout << "Cl4p-tp **" << this->_name << " destroyed" << std::endl;
 	return ;
 }
 
@@ -68,7 +68,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
 }
 
 /******************************************************************************/
-/*BEGIN - Getters*/
+/*BEGIN - Getters and Setters*/
 /******************************************************************************/
 std::string ClapTrap::getName(void) const {
 	return (this->_name);
@@ -82,8 +82,11 @@ unsigned int ClapTrap::getEnergyPoints(void) const {
 unsigned int ClapTrap::getAttackDamage(void) const {
 	return (this->_attackDamage);
 }
+void ClapTrap::setAttackDamage(unsigned int value) {
+	this->_attackDamage = value;
+}
 /******************************************************************************/
-/*END -Getters*/
+/*END -Getters and Setters*/
 /******************************************************************************/
 
 /**
@@ -93,20 +96,39 @@ unsigned int ClapTrap::getAttackDamage(void) const {
  * @param target
  */
 void		ClapTrap::attack(std::string & target) {
-	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+	if (this->_hitPoints <= 0) {
+		std::cout << "No more Hit Points to attack..." << std::endl;
+		return ;
+	}
+
+	if (this->_energyPoints <= 0) {
+		std::cout << "No more energy to attack..." << std::endl;
+		return ;
+	}
 
 	this->_energyPoints--;
-	// this->_hitPoints -= amount;
-	std::cout << "Cl4p-tp " << this->_name << " attacks " << target << ". Damage: "
-		<< this->_attackDamage << "." << std::endl;
+	std::cout << "Cl4p-tp **" << this->_name << " attacks **" << target
+		<< ", causing " << this->_attackDamage << " points of damage! Energy Remain: " << this->_energyPoints << "." << std::endl;
 }
+
+/**
+ * @brief Take damage will will loose hit points
+ * @param amount
+ */
 void		ClapTrap::takeDamage(unsigned int amount) {
-	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
 
+	if (amount <= 0) {
+		std::cout << "Invalid Amount to Take Damage" << std::endl;
+		return ;
+	}
 
-	// this->_energyPoints--;
+	if (this->_hitPoints <= 0) {
+		std::cout << "No more Hit Points to take damage..." << std::endl;
+		return ;
+	}
+
 	this->_hitPoints -= amount;
-	std::cout << "Cl4p-tp " << this->_name << " takes " << amount << ". Heal: "
+	std::cout << "Cl4p-tp **" << this->_name << " takes " << amount << " damage... Heal remain: "
 		<< this->_hitPoints << "." << std::endl;
 }
 /**
@@ -115,27 +137,26 @@ void		ClapTrap::takeDamage(unsigned int amount) {
  * Of course, ClapTrap can’t do anything if it has no hit points or energy points left.
  * @param amount
  */
-void		ClapTrap::beRepaired(unsigned int amount) {
-	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
-
-	if (this->_hitPoints <= 0) {
-		std::cout << "Cl4p-tp " << this->_name << " can't repaired... HitPoints Required..." << std::endl;
-		return ;
-	}
-
-	if (this->_energyPoints <= 0) {
-		std::cout << "Cl4p-tp " << this->_name << " can't repaired... EnergyPoints Required..." << std::endl;
-		return ;
-	}
+void	ClapTrap::beRepaired(unsigned int amount) {
 
 	if (amount <= 0) {
 		std::cout << "Invalid Amount to repair something..." << std::endl;
 		return ;
 	}
 
+	if (this->_hitPoints <= 0) {
+		std::cout << "Cl4p-tp **" << this->_name << " can't repaired... HitPoints Required..." << std::endl;
+		return ;
+	}
+
+	if (this->_energyPoints <= 0) {
+		std::cout << "Cl4p-tp **" << this->_name << " can't repaired... EnergyPoints Required..." << std::endl;
+		return ;
+	}
+
 	this->_energyPoints--;
 	this->_hitPoints += amount;
-	std::cout << "Cl4p-tp " << this->_name << " repairs " << amount << ", healing: "
+	std::cout << "Cl4p-tp **" << this->_name << " repairs " << amount << ", healing: "
 		<< this->_hitPoints << "." << std::endl;
 	return ;
 }
