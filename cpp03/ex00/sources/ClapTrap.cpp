@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/05 06:52:36 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/05 07:12:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,20 @@ unsigned int ClapTrap::getAttackDamage(void) const {
  */
 void		ClapTrap::attack(std::string & target) {
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+
+	this->_energyPoints--;
+	// this->_hitPoints -= amount;
+	std::cout << "Cl4p-tp " << this->_name << " attacks " << target << ". Damage: "
+		<< this->_attackDamage << "." << std::endl;
 }
 void		ClapTrap::takeDamage(unsigned int amount) {
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+
+
+	// this->_energyPoints--;
+	this->_hitPoints -= amount;
+	std::cout << "Cl4p-tp " << this->_name << " takes " << amount << ". Heal: "
+		<< this->_hitPoints << "." << std::endl;
 }
 /**
  * @brief When ClapTrap repairs itself, it gets <amount> hit points back
@@ -106,4 +117,25 @@ void		ClapTrap::takeDamage(unsigned int amount) {
  */
 void		ClapTrap::beRepaired(unsigned int amount) {
 	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+
+	if (this->_hitPoints <= 0) {
+		std::cout << "Cl4p-tp " << this->_name << " can't repaired... HitPoints Required..." << std::endl;
+		return ;
+	}
+
+	if (this->_energyPoints <= 0) {
+		std::cout << "Cl4p-tp " << this->_name << " can't repaired... EnergyPoints Required..." << std::endl;
+		return ;
+	}
+
+	if (amount <= 0) {
+		std::cout << "Invalid Amount to repair something..." << std::endl;
+		return ;
+	}
+
+	this->_energyPoints--;
+	this->_hitPoints += amount;
+	std::cout << "Cl4p-tp " << this->_name << " repairs " << amount << ", healing: "
+		<< this->_hitPoints << "." << std::endl;
+	return ;
 }
