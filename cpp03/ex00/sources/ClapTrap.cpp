@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/04 10:01:07 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/05 06:52:36 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(void) :
 	_hitPoints(ClapTrap::c_hitPoints),
 	_energyPoints(ClapTrap::c_energyPoints),
 	_attackDamage(ClapTrap::c_attackDamagePoints) {
-	// std::cout << "Default constructor called" << std::endl;
+	std::cout << "Cl4p-tp with no name was constructed" << std::endl;
 	return ;
 }
 
@@ -36,6 +36,7 @@ ClapTrap::ClapTrap(std::string name) :
 	_energyPoints(ClapTrap::c_energyPoints),
 	_attackDamage(ClapTrap::c_attackDamagePoints) {
 	std::cout << "Cl4p-tp named " << name << " was constructed" << std::endl;
+	return ;
 }
 
 /**
@@ -82,23 +83,27 @@ unsigned int ClapTrap::getAttackDamage(void) const {
 	return (this->_attackDamage);
 }
 /******************************************************************************/
-/*END -MGetters*/
+/*END -Getters*/
 /******************************************************************************/
 
-// /**
-//  * @brief Getter
-//  * @return int
-//  */
-// int		Fixed::getRawBits(void) const {
-// 	std::cout << "getRawBits member function called." << std::endl;
-// 	return (this->_raw);
-// }
-
-// /**
-//  * @brief Setter
-//  */
-// void	Fixed::setRawBits(int const _raw) {
-// 	std::cout << "SetRawBits called." << std::endl;
-// 	this->_raw = _raw;
-// 	return ;
-// }
+/**
+ * @brief When ClapTrack attacks, it causes its target to lose <attack damage> hit points.
+ * Attacking and repairing cost 1 energy point each.
+ * Of course, ClapTrap can’t do anything if it has no hit points or energy points left.
+ * @param target
+ */
+void		ClapTrap::attack(std::string & target) {
+	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+}
+void		ClapTrap::takeDamage(unsigned int amount) {
+	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+}
+/**
+ * @brief When ClapTrap repairs itself, it gets <amount> hit points back
+ * Attacking and repairing cost 1 energy point each.
+ * Of course, ClapTrap can’t do anything if it has no hit points or energy points left.
+ * @param amount
+ */
+void		ClapTrap::beRepaired(unsigned int amount) {
+	//ClapTrap <name> attacks <target>, causing <damage> points of damage!
+}
