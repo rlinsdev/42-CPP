@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:11 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/05 08:13:49 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/06 07:15:29 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class ClapTrap {
 	public:
 
 		// Static Constants
-		static int const	c_hitPoints = 10;
-		static int const	c_energyPoints = 10;
-		static int const	c_attackDamagePoints = 0;
+		static int const	c_clap_hitPoints = 10;
+		static int const	c_clap_energyPoints = 10;
+		static int const	c_clap_attackDamagePoints = 0;
 
 		// Constructor and destructor
 		ClapTrap(std::string name);

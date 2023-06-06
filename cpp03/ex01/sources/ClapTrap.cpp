@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/05 08:03:28 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/06 07:16:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
  */
 ClapTrap::ClapTrap(void) :
 	_name("unnamed"),
-	_hitPoints(ClapTrap::c_hitPoints),
-	_energyPoints(ClapTrap::c_energyPoints),
-	_attackDamage(ClapTrap::c_attackDamagePoints) {
+	_hitPoints(ClapTrap::c_clap_hitPoints),
+	_energyPoints(ClapTrap::c_clap_energyPoints),
+	_attackDamage(ClapTrap::c_clap_attackDamagePoints) {
 	std::cout << "Cl4p-tp with no name was constructed" << std::endl;
 	return ;
 }
@@ -32,9 +32,9 @@ ClapTrap::ClapTrap(void) :
  */
 ClapTrap::ClapTrap(std::string name) :
 	_name(name),
-	_hitPoints(ClapTrap::c_hitPoints),
-	_energyPoints(ClapTrap::c_energyPoints),
-	_attackDamage(ClapTrap::c_attackDamagePoints) {
+	_hitPoints(ClapTrap::c_clap_hitPoints),
+	_energyPoints(ClapTrap::c_clap_energyPoints),
+	_attackDamage(ClapTrap::c_clap_attackDamagePoints) {
 	std::cout << "Cl4p-tp named **" << name << " was constructed" << std::endl;
 	return ;
 }
