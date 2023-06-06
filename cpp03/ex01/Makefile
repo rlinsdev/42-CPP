@@ -1,4 +1,4 @@
-NAME = 00-ClapTrap
+NAME = 01-ClapTrap
 
 # Collors
 RESET 	= \033[0m
