@@ -60,6 +60,11 @@ A class should have a
 * An assignment operator (=)
 
 
+### Inheritance
+Inheritance is the means by which you can create new classes by reusing and expanding on existing class definitions.
+Inheritance is also fundamental to making polymorphism possible,
+_protected__: members of a base class is accessible from within the derived class, but protected from outside interference
+
 ## CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
@@ -72,6 +77,9 @@ This is an introduction to stdio streams and the string class.
 
 ### Binary point:
 ![Binary Point](./img/Binary%20Point.png)
+
+### Access Specifier
+![Access Specifier](./img/Access%20Specifier.png)
 
 ### Fixed point arithmetic:
 * The benefit of fixed point arithmetic is that they are as straight-forward and efficient as integers arithmetic in computers. We can reuse all the hardware built to for integer arithmetic to perform real numbers arithmetic using fixed point representation. In other word, fixed point arithmetic comes for free on computers.
