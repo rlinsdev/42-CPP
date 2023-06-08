@@ -6,11 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/05 08:11:46 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 09:06:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ClapTrap.hpp>
+#include <ScavTrap.hpp>
 #include <iostream>
 
 int	main(void) {
@@ -19,7 +20,7 @@ int	main(void) {
 	std::string rb2 = "Android-02";
 
 	ClapTrap ct1 (rb1);
-	ClapTrap ct2 (rb2);
+	ScavTrap ct2 (rb2);
 
 	std::cout << std::endl << "Test: " << rb1 << " Attack" << std::endl;
 	ct1.setAttackDamage(1);
@@ -31,11 +32,34 @@ int	main(void) {
 	ct2.attack(rb1);
 	ct1.takeDamage(ct2.getAttackDamage());
 
+	ct2.guardGate();
+
 	std::cout << std::endl << "Test: Repaired all" << std::endl;
 	ct1.beRepaired(2);
 	ct2.beRepaired(1);
 
 	std::cout << std::endl << "End of simulation..." << std::endl;
+
+//////////////////////////////////
+
+	// std::string scavTrapName = "SCVT-2000";
+	// std::string clapTrapName = "CT-42";
+
+	// ScavTrap	scavTrap(scavTrapName);
+	// ClapTrap	clapTrap(clapTrapName);
+
+	// clapTrap.attack(scavTrapName);
+	// scavTrap.takeDamage(0);
+	// scavTrap.attack(clapTrapName);
+	// clapTrap.takeDamage(0);
+	// clapTrap.beRepaired(5000);
+	// scavTrap.guardGate();
+	// for (int i = 0; i < 50; i++)
+	// 	scavTrap.beRepaired(5000);
+	// scavTrap.attack(scavTrapName);
+	// scavTrap.guardGate();
+	// scavTrap.takeDamage(5000);
+
 
 	return (0);
 }
