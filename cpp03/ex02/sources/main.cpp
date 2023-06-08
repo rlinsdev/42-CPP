@@ -6,12 +6,13 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/08 09:45:56 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 11:51:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ClapTrap.hpp>
 #include <ScavTrap.hpp>
+#include <FragTrap.hpp>
 #include <iostream>
 
 int	main(void) {
@@ -20,7 +21,7 @@ int	main(void) {
 	std::string rb2 = "Android-02";
 
 	ClapTrap ct1 (rb1);
-	ScavTrap ct2 (rb2);
+	FragTrap ct2 (rb2);
 
 	std::cout << std::endl << "Test: " << rb1 << " Attack" << std::endl;
 	ct1.setAttackDamage(1);
@@ -32,8 +33,8 @@ int	main(void) {
 	ct2.attack(rb1);
 	ct1.takeDamage(ct2.getAttackDamage());
 
-	std::cout << std::endl << "\tGuardGate Test" << std::endl;
-	ct2.guardGate();
+	std::cout << std::endl << "\tHighFive Test" << std::endl;
+	ct2.highFivesGuys();
 
 	std::cout << std::endl << "Test: Repaired all" << std::endl;
 	ct1.beRepaired(2);
