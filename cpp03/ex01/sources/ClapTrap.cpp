@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/06 07:16:11 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 08:58:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ClapTrap::ClapTrap(std::string name) :
  * @brief Copy constructor
  */
 ClapTrap::ClapTrap(ClapTrap const & src) {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Cl4p-tp copy constructor called." << std::endl;
 	*this = src;
 	return ;
 }
@@ -62,7 +62,9 @@ ClapTrap::~ClapTrap(void) {
 ClapTrap & ClapTrap::operator=(ClapTrap const & src) {
 	if (this != &src) {
 		this->_name = src.getName();
-
+		this->_hitPoints = src.getHitPoints();
+		this->_energyPoints = src.getEnergyPoints();
+		this->_attackDamage = src.getAttackDamage();
 	}
 	return (*this);
 }
@@ -116,7 +118,6 @@ void		ClapTrap::attack(std::string & target) {
  * @param amount
  */
 void		ClapTrap::takeDamage(unsigned int amount) {
-
 	if (amount <= 0) {
 		std::cout << "Invalid Amount to Take Damage" << std::endl;
 		return ;
