@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:11 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/06 07:15:29 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 08:41:45 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include <string>
 
 class ClapTrap {
-	private:
-		ClapTrap(void);
-		std::string		_name;
-		unsigned int	_hitPoints;
-		unsigned int	_energyPoints;
-		unsigned int	_attackDamage;
 
 	public:
 
@@ -49,6 +43,13 @@ class ClapTrap {
 		void		attack(std::string & target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
+
+	protected: // private will get error of compilation. Must be protected
+		ClapTrap(void);
+		std::string		_name;
+		unsigned int	_hitPoints;
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage;
 	};
 
 #endif
