@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/08 09:06:26 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 09:30:43 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,6 @@ int	main(void) {
 	ct2.beRepaired(1);
 
 	std::cout << std::endl << "End of simulation..." << std::endl;
-
-//////////////////////////////////
-
-	// std::string scavTrapName = "SCVT-2000";
-	// std::string clapTrapName = "CT-42";
-
-	// ScavTrap	scavTrap(scavTrapName);
-	// ClapTrap	clapTrap(clapTrapName);
-
-	// clapTrap.attack(scavTrapName);
-	// scavTrap.takeDamage(0);
-	// scavTrap.attack(clapTrapName);
-	// clapTrap.takeDamage(0);
-	// clapTrap.beRepaired(5000);
-	// scavTrap.guardGate();
-	// for (int i = 0; i < 50; i++)
-	// 	scavTrap.beRepaired(5000);
-	// scavTrap.attack(scavTrapName);
-	// scavTrap.guardGate();
-	// scavTrap.takeDamage(5000);
-
 
 	return (0);
 }

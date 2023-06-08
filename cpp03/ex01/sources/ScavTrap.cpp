@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 08:17:02 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/08 08:59:29 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 09:32:38 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,9 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
 }
 
 /**
- * @brief TODO: NA CLASSE ANTERIOR  HAVIA MTA DESCRIÇÃO AQUI DO PDF
- *
+ * @brief Attack from ScavTrap.
+ * attack() will print different messages.
+ * After all, ClapTraps are aware of their individuality.
  * @param target
  */
 void	ScavTrap::attack(std::string & target) {
