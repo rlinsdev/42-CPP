@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/08 08:58:11 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 09:46:39 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ void		ClapTrap::takeDamage(unsigned int amount) {
 	}
 
 	this->_hitPoints -= amount;
-	std::cout << "Cl4p-tp **" << this->_name << " takes " << amount << " damage... Heal remain: "
+	std::cout << "*****" << this->_name << " takes " << amount << " damage... Heal remain: "
 		<< this->_hitPoints << "." << std::endl;
 }
 /**
@@ -146,18 +146,18 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	}
 
 	if (this->_hitPoints <= 0) {
-		std::cout << "Cl4p-tp **" << this->_name << " can't repaired... HitPoints Required..." << std::endl;
+		std::cout << "******" << this->_name << " can't repaired... HitPoints Required..." << std::endl;
 		return ;
 	}
 
 	if (this->_energyPoints <= 0) {
-		std::cout << "Cl4p-tp **" << this->_name << " can't repaired... EnergyPoints Required..." << std::endl;
+		std::cout << "******" << this->_name << " can't repaired... EnergyPoints Required..." << std::endl;
 		return ;
 	}
 
 	this->_energyPoints--;
 	this->_hitPoints += amount;
-	std::cout << "Cl4p-tp **" << this->_name << " repairs " << amount << ", healing: "
+	std::cout << "******" << this->_name << " repairs " << amount << ", healing: "
 		<< this->_hitPoints << "." << std::endl;
 	return ;
 }

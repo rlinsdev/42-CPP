@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/08 09:30:43 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/08 09:45:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(void) {
 	ct2.attack(rb1);
 	ct1.takeDamage(ct2.getAttackDamage());
 
+	std::cout << std::endl << "\tGuardGate Test" << std::endl;
 	ct2.guardGate();
 
 	std::cout << std::endl << "Test: Repaired all" << std::endl;
