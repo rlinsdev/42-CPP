@@ -39,7 +39,7 @@ $(NAME): $(OBJS)
 	@echo "$(GREEN)Build Successful$(RESET)"
 
 valgrind:
-	$(LEAK) ./00-ClapTrap
+	$(LEAK) ./01-ClapTrap
 
 clean:
 	@echo "$(RED)Cleaning objects...$(RESET)"
