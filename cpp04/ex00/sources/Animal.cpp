@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:39:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/09 08:20:39 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/09 08:40:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,22 @@ Animal::Animal(void) :
 	return ;
 }
 
-
 /**
  * @brief Copy constructor
  */
 Animal::Animal(Animal const & src) {
 	std::cout << "Animal - Copy constructor called." << std::endl;
 	*this = src;
+	return ;
+}
+
+/**
+ * @brief Default constructor with one param
+ * @param type of animal
+ */
+Animal::Animal(std::string type) :
+	_type(type) {
+	std::cout << "Animal - Type animal Constructor Called" << std::endl;
 	return ;
 }
 
@@ -58,10 +67,11 @@ Animal & Animal::operator=(Animal const & src) {
 std::string Animal::getType(void) const {
 	return (this->_type);
 }
-// void ClapTrap::setAttackDamage(unsigned int value) {
-// 	this->_attackDamage = value;
-// }
+
 /******************************************************************************/
 /*END -Getters and Setters*/
 /******************************************************************************/
-
+void	Animal::makeSound(void) {
+	std::cout << this->_type << ": No one knows this sound!" << std::endl;
+	return ;
+}
