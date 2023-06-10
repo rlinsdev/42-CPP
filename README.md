@@ -65,6 +65,12 @@ Inheritance is the means by which you can create new classes by reusing and expa
 Inheritance is also fundamental to making polymorphism possible,
 _protected__: members of a base class is accessible from within the derived class, but protected from outside interference
 
+### Subtyping polymorphism
+Subtyping polymorphism, also known as dynamic polymorphism or runtime polymorphism, refers to the ability of a program to determine the type of an object at runtime and execute the appropriate method.
+
+### Virtual functions
+Virtual functions are member functions that can be override by derived class. They are declared with the virtual keyword in the base class and are defined in the derived class using the same signature as the base class function.
+
 ## CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
