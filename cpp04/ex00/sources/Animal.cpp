@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:39:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/09 08:40:19 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/10 07:51:06 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Animal::Animal(Animal const & src) {
  * @brief Default constructor with one param
  * @param type of animal
  */
-Animal::Animal(std::string type) :
+Animal::Animal(std::string const & type) :
 	_type(type) {
 	std::cout << "Animal - Type animal Constructor Called" << std::endl;
 	return ;
@@ -71,7 +71,7 @@ std::string Animal::getType(void) const {
 /******************************************************************************/
 /*END -Getters and Setters*/
 /******************************************************************************/
-void	Animal::makeSound(void) {
+void	Animal::makeSound(void) const {
 	std::cout << this->_type << ": No one knows this sound!" << std::endl;
 	return ;
 }
