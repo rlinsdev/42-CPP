@@ -6,13 +6,13 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 12:57:01 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:04:42 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <Animal.hpp>
-#include <color.hpp>
+#include <Color.hpp>
 #include <Dog.hpp>
 #include <Cat.hpp>
 #include <WrongAnimal.hpp>

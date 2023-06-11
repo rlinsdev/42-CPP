@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:44:08 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 11:54:02 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:05:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Cat.hpp>
-#include <color.hpp>
+#include <Color.hpp>
 #include <string>
 #include <iostream>
 

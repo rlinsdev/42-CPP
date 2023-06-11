@@ -6,12 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:39:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 11:19:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:05:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Animal.hpp>
-#include <color.hpp>
+#include <Color.hpp>
 #include <string>
 #include <iostream>
 
