@@ -6,36 +6,51 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/09 07:40:36 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 11:38:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Animal.hpp>
+#include <color.hpp>
+#include <Dog.hpp>
 #include <iostream>
+
+void	BaseClass();
+void	dogByDerivedDogClass();
+void	dogByBaseClass();
 
 int	main(void) {
 
-	// std::string rb1 = "Robot-01";
-	// std::string rb2 = "Android-02";
-
-	// ClapTrap ct1 (rb1);
-	// ClapTrap ct2 (rb2);
-
-	// std::cout << std::endl << "Test: " << rb1 << " Attack" << std::endl;
-	// ct1.setAttackDamage(1);
-	// ct1.attack(rb2);
-	// ct2.takeDamage(ct1.getAttackDamage());
-
-	// std::cout << std::endl << "Test: " << rb2 << " Attack" << std::endl;
-	// ct2.setAttackDamage(2);
-	// ct2.attack(rb1);
-	// ct1.takeDamage(ct2.getAttackDamage());
-
-	// std::cout << std::endl << "Test: Repaired all" << std::endl;
-	// ct1.beRepaired(2);
-	// ct2.beRepaired(1);
-
-	// std::cout << std::endl << "End of simulation..." << std::endl;
+	BaseClass();
+	dogByDerivedDogClass();
+	dogByBaseClass();
 
 	return (0);
+}
+
+void	BaseClass() {
+	std::cout << std::endl << BG_WHITE WHITE "Animal - Base class tests" RESET << std::endl;
+	Animal *animal = new Animal();
+	std::cout << GREEN "Animal type: " << animal->getType() << RESET << std::endl;
+	animal->makeSound();
+	delete animal;
+	std::cout << std::endl;
+}
+
+void dogByDerivedDogClass() {
+	std::cout << std::endl << BG_WHITE WHITE "Dog by derived Dog class" RESET << std::endl;
+	Dog *dog = new Dog();
+	std::cout << GREEN << "Dog type: " << dog->getType() << RESET << std::endl;
+	dog->makeSound();
+	delete dog;
+	std::cout << std::endl;
+}
+
+void dogByBaseClass() {
+	std::cout << std::endl << BG_WHITE WHITE "Dog by Animal base class" RESET << std::endl;
+	Animal *dog = new Dog();
+	std::cout << GREEN << "Animal type: " << dog->getType() << RESET << std::endl;
+	dog->makeSound();
+	delete dog;
+	std::cout << std::endl;
 }
