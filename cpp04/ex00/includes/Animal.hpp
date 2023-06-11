@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:38:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 12:21:00 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:21:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Animal {
 		virtual void	makeSound(void) const;
 
 	protected:
-		std::string	_type;
+		std::string	_type; // Attribute _type
 };
 
 #endif

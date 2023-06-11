@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:15:50 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:24:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,24 @@ void 	wrongTest();
 void	wrongSubjectTest();
 
 int	main(void) {
+	// // Bae class test
 	// BaseClass();
 
 	// // Dog tests
-	// std::cout << std::endl;
 	// dogByDerivedDogClass();
 	// dogByBaseClass();
 
 	// // Cat tests
-	// std::cout << std::endl;
 	// catByDerivedCatClass();
 	// catByBaseClass();
 
 	// // Wrong Test
-	// std::cout << std::endl;
 	// wrongTest();
 
 	// // Wrong Subject
-	// std::cout << std::endl;
 	// wrongSubjectTest();
 
 	// Subject tests
-	std::cout << std::endl;
 	subjectTest();
 
 	return (0);
