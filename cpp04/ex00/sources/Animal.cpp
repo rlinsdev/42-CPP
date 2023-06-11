@@ -6,11 +6,12 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:39:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/10 07:51:06 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 11:19:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Animal.hpp>
+#include <color.hpp>
 #include <string>
 #include <iostream>
 
@@ -19,7 +20,7 @@
  */
 Animal::Animal(void) :
 	_type("undefined") {
-	std::cout << "Animal - No Param Constructor Called" << std::endl;
+	std::cout << CYAN "Animal - No Param Constructor Called" RESET << std::endl;
 	return ;
 }
 
@@ -27,7 +28,7 @@ Animal::Animal(void) :
  * @brief Copy constructor
  */
 Animal::Animal(Animal const & src) {
-	std::cout << "Animal - Copy constructor called." << std::endl;
+	std::cout << CYAN "Animal - Copy constructor called." RESET << std::endl;
 	*this = src;
 	return ;
 }
@@ -38,7 +39,7 @@ Animal::Animal(Animal const & src) {
  */
 Animal::Animal(std::string const & type) :
 	_type(type) {
-	std::cout << "Animal - Type animal Constructor Called" << std::endl;
+	std::cout << CYAN "Animal - Type animal Constructor Called" RESET << std::endl;
 	return ;
 }
 
@@ -46,7 +47,7 @@ Animal::Animal(std::string const & type) :
  * @brief Destructor
  */
 Animal::~Animal(void) {
-	std::cout << "Animal - Destructor called." << std::endl;
+	std::cout << BRIGHT_RED "Animal - Destructor called." RESET << std::endl;
 	return ;
 }
 
@@ -61,17 +62,18 @@ Animal & Animal::operator=(Animal const & src) {
 	return (*this);
 }
 
-/******************************************************************************/
-/*BEGIN - Getters and Setters*/
-/******************************************************************************/
+/**
+ * @brief Get Type of animal
+ * @return std::string
+ */
 std::string Animal::getType(void) const {
 	return (this->_type);
 }
 
-/******************************************************************************/
-/*END -Getters and Setters*/
-/******************************************************************************/
+/**
+ * @brief Member Function - MakeSound
+ */
 void	Animal::makeSound(void) const {
-	std::cout << this->_type << ": No one knows this sound!" << std::endl;
+	std::cout << YELLOW << this->_type << ": No one knows this sound!" RESET << std::endl;
 	return ;
 }
