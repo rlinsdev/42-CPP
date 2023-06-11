@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:04:42 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/11 15:14:11 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,28 @@ void 	wrongTest();
 void	wrongSubjectTest();
 
 int	main(void) {
-	// BaseClass();
+	BaseClass();
 
-	// // Dog tests
-	// std::cout << std::endl;
-	// dogByDerivedDogClass();
-	// dogByBaseClass();
+	// Dog tests
+	std::cout << std::endl;
+	dogByDerivedDogClass();
+	dogByBaseClass();
 
-	// // Cat tests
-	// std::cout << std::endl;
-	// catByDerivedCatClass();
-	// catByBaseClass();
+	// Cat tests
+	std::cout << std::endl;
+	catByDerivedCatClass();
+	catByBaseClass();
 
 	// Wrong Test
-	// WrongTest();
+	std::cout << std::endl;
+	wrongTest();
 
 	// Wrong Subject
-	// wrongSubjectTest();
+	std::cout << std::endl;
+	wrongSubjectTest();
 
 	// Subject tests
+	std::cout << std::endl;
 	subjectTest();
 
 	return (0);
@@ -57,7 +60,7 @@ int	main(void) {
  *
  */
 void	BaseClass() {
-	std::cout << BG_WHITE WHITE "Animal - Base class tests" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Animal - Base class tests" RESET << std::endl;
 	Animal *animal = new Animal();
 	std::cout << GREEN "Animal type: " << animal->getType() << RESET << std::endl;
 	animal->makeSound();
@@ -70,7 +73,7 @@ void	BaseClass() {
  *
  */
 void dogByDerivedDogClass() {
-	std::cout << BG_WHITE WHITE "Dog by derived Dog class" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Dog by derived Dog class" RESET << std::endl;
 	Dog *dog = new Dog();
 	std::cout << GREEN << "Dog type: " << dog->getType() << RESET << std::endl;
 	dog->makeSound();
@@ -82,7 +85,7 @@ void dogByDerivedDogClass() {
  * @brief Dog instantiate class,but by base class
  */
 void dogByBaseClass() {
-	std::cout << BG_WHITE WHITE "Dog by Animal base class" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Dog by Animal base class" RESET << std::endl;
 	Animal *dog = new Dog();
 	std::cout << GREEN << "Animal type: " << dog->getType() << RESET << std::endl;
 	dog->makeSound();
@@ -95,7 +98,7 @@ void dogByBaseClass() {
  *
  */
 void catByDerivedCatClass() {
-	std::cout << BG_WHITE WHITE "Cat by derived Cat class" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Cat by derived Cat class" RESET << std::endl;
 	Cat *cat = new Cat();
 	std::cout << GREEN << "Cat type: " << cat->getType() << RESET << std::endl;
 	cat->makeSound();
@@ -107,7 +110,7 @@ void catByDerivedCatClass() {
  * @brief Cat instantiate class,but by base class
  */
 void catByBaseClass() {
-	std::cout << BG_WHITE WHITE "Cat by Animal base class" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Cat by Animal base class" RESET << std::endl;
 	Animal *cat = new Cat();
 	std::cout << GREEN << "Animal type: " << cat->getType() << RESET << std::endl;
 	cat->makeSound();
@@ -119,7 +122,7 @@ void catByBaseClass() {
  * @brief Identical test from subject
  */
 void	subjectTest() {
-	std::cout << BG_WHITE WHITE "Subject test!" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "Subject test!" RESET << std::endl;
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -139,7 +142,7 @@ void	subjectTest() {
  * @brief Test from subject - Wrong call
  */
 void	wrongSubjectTest() {
-	std::cout << BG_WHITE WHITE "[Wrong] Subject test!" RESET << std::endl;
+	std::cout << BG_WHITE BLACK "[Wrong] Subject test!" RESET << std::endl;
 	const WrongAnimal* meta = new WrongAnimal();
 	const Animal* j = new Dog();
 	const WrongAnimal* i = new WrongCat();
@@ -157,7 +160,7 @@ void	wrongSubjectTest() {
 
 void 	wrongTest() {
 	{
-		std::cout << BG_WHITE WHITE "Wrong Animal" RESET << std::endl;
+		std::cout << BG_WHITE BLACK "Wrong Animal" RESET << std::endl;
 		const WrongAnimal *	animal = new WrongAnimal();
 		std::cout << "WrongAnimal type: " << animal->getType() << std::endl;
 		animal->makeSound();
@@ -165,7 +168,7 @@ void 	wrongTest() {
 		std::cout << std::endl;
 	}
 	{
-		std::cout << BG_WHITE WHITE "Wrong Cat By Wrong Cat Class" RESET << std::endl;
+		std::cout << BG_WHITE BLACK "Wrong Cat By Wrong Cat Class" RESET << std::endl;
 		const WrongCat *	cat = new WrongCat();
 		std::cout << "WrongCat type: " << cat->getType() << std::endl;
 		cat->makeSound();
@@ -173,7 +176,7 @@ void 	wrongTest() {
 		std::cout << std::endl;
 	}
 	{
-		std::cout << BG_WHITE WHITE "WrongCat By WrongAnimal Class" RESET << std::endl;
+		std::cout << BG_WHITE BLACK "WrongCat By WrongAnimal Class" RESET << std::endl;
 		const WrongAnimal * cat = new WrongCat();
 		std::cout << "WrongAnimal type: " << cat->getType() << std::endl;
 		cat->makeSound();
