@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:11:09 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 17:35:11 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 08:52:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ Brain & Brain::operator=(Brain const & src) {
  * @param index
  * @return std::string const&
  */
-std::string	Brain::getIdea ( int index ) const {
+std::string	Brain::getIdea( int index ) const {
 	if (index < 0 || index >= BRAIN_SIZE) {
 		return ("");
 	}
