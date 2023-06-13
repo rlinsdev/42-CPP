@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:07:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 07:25:46 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 08:54:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Dog : public Animal {
 		Dog &	operator=(Dog const & src);
 
 		// Public members from subject
+		Brain 	*getBrain(void) const;
 		void	makeSound(void) const;
 
 	private:
