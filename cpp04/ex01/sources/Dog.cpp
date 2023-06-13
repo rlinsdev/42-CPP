@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:26:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:05:08 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 07:37:50 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /**
  * @brief Default Constructor
  */
-Dog::Dog(void) : Animal("Dog") {
+Dog::Dog(void) : Animal("Dog"), brain(new Brain()) {
 	std::cout << CYAN "Dog constructor Called" RESET << std::endl;
 	this->_type = "Dog";
 	return ;
@@ -27,7 +27,7 @@ Dog::Dog(void) : Animal("Dog") {
 /**
  * @brief Copy constructor
  */
-Dog::Dog(Dog const & src) : Animal(src._type) {
+Dog::Dog(Dog const & src) : Animal(src._type), brain(NULL) {
 	std::cout << CYAN "Dog - Copy constructor called." RESET << std::endl;
 	*this = src;
 	return ;
@@ -38,6 +38,7 @@ Dog::Dog(Dog const & src) : Animal(src._type) {
  */
 Dog::~Dog(void) {
 	std::cout << BRIGHT_RED "Dog - Destructor called." RESET << std::endl;
+	delete this->brain;
 	return ;
 }
 
@@ -48,6 +49,7 @@ Dog & Dog::operator=(Dog const & src) {
 	if (this != &src) {
 		this->_type = src.getType();
 	}
+	this->brain = new Brain(*src.brain);
 	std::cout << "Dog - Copy assignment operator called." << std::endl;
 	return (*this);
 }
