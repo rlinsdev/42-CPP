@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:26:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 07:37:50 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 09:01:56 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,12 @@ Dog & Dog::operator=(Dog const & src) {
 void	Dog::makeSound(void) const {
 	std::cout << YELLOW << this->_type << ":  Au Au, Arf! Arf!" RESET << std::endl;
 	return ;
+}
+
+/**
+ * @brief Get Brain
+ * @return Brain*
+ */
+Brain *Dog::getBrain(void) const {
+	return (this->brain);
 }

@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:44:08 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 07:30:12 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 09:02:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,12 @@ Cat & Cat::operator=(Cat const & src) {
 void	Cat::makeSound(void) const {
 	std::cout << YELLOW << this->_type << ": Meooow meoooowwwwwwww" RESET << std::endl;
 	return ;
+}
+
+/**
+ * @brief Get Brain
+ * @return Brain*
+ */
+Brain *Cat::getBrain(void) const {
+	return (this->brain);
 }
