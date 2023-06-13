@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:24:05 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 07:46:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,103 +15,59 @@
 #include <Color.hpp>
 #include <Dog.hpp>
 #include <Cat.hpp>
-#include <WrongAnimal.hpp>
-#include <WrongCat.hpp>
 
-void	BaseClass();
-void	dogByDerivedDogClass();
-void	dogByBaseClass();
-void	catByDerivedCatClass();
-void	catByBaseClass();
 void	subjectTest();
-void 	wrongTest();
-void	wrongSubjectTest();
+void	kennelTest(int nbAnimals);
+void	dogCopyTest();
 
 int	main(void) {
-	// // Bae class test
-	// BaseClass();
 
-	// // Dog tests
-	// dogByDerivedDogClass();
-	// dogByBaseClass();
+	// // Subject tests
+	// subjectTest();
 
-	// // Cat tests
-	// catByDerivedCatClass();
-	// catByBaseClass();
+	// // Kennel test
+	// kennelTest(5);
 
-	// // Wrong Test
-	// wrongTest();
-
-	// // Wrong Subject
-	// wrongSubjectTest();
-
-	// Subject tests
-	subjectTest();
+	// Dog Copy
+	// dogCopyTest();
 
 	return (0);
 }
 
 /**
- * @brief Tests with base class
- *
+ * @brief Building a Kennel. Instance the class Animal and generate
+ * Cats and dogs
+ * @param nbAnimals
  */
-void	BaseClass() {
-	std::cout << BG_WHITE BLACK "Animal - Base class tests" RESET << std::endl;
-	Animal *animal = new Animal();
-	std::cout << GREEN "Animal type: " << animal->getType() << RESET << std::endl;
-	animal->makeSound();
-	delete animal;
-	std::cout << std::endl;
-}
+void	kennelTest(int nbAnimals) {
 
-/**
- * @brief Dog instantiate class, but by Dog class /Derived class
- *
- */
-void dogByDerivedDogClass() {
-	std::cout << BG_WHITE BLACK "Dog by derived Dog class" RESET << std::endl;
-	Dog *dog = new Dog();
-	std::cout << GREEN << "Dog type: " << dog->getType() << RESET << std::endl;
-	dog->makeSound();
-	delete dog;
-	std::cout << std::endl;
-}
+	std::cout << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
 
-/**
- * @brief Dog instantiate class,but by base class
- */
-void dogByBaseClass() {
-	std::cout << BG_WHITE BLACK "Dog by Animal base class" RESET << std::endl;
-	Animal *dog = new Dog();
-	std::cout << GREEN << "Animal type: " << dog->getType() << RESET << std::endl;
-	dog->makeSound();
-	delete dog;
-	std::cout << std::endl;
-}
+	Animal *arrAnimals[nbAnimals + 1]; // ? mais 1??
+	arrAnimals[nbAnimals] = NULL; // Precisa?
 
-/**
- * @brief Cat instantiate class, but by Cat class /Derived class
- *
- */
-void catByDerivedCatClass() {
-	std::cout << BG_WHITE BLACK "Cat by derived Cat class" RESET << std::endl;
-	Cat *cat = new Cat();
-	std::cout << GREEN << "Cat type: " << cat->getType() << RESET << std::endl;
-	cat->makeSound();
-	delete cat;
-	std::cout << std::endl;
-}
+	int nbCats = (nbAnimals / 2);
+	int nbDogs = nbAnimals - (nbAnimals / 2);
 
-/**
- * @brief Cat instantiate class,but by base class
- */
-void catByBaseClass() {
-	std::cout << BG_WHITE BLACK "Cat by Animal base class" RESET << std::endl;
-	Animal *cat = new Cat();
-	std::cout << GREEN << "Animal type: " << cat->getType() << RESET << std::endl;
-	cat->makeSound();
-	delete cat;
-	std::cout << std::endl;
+	std::cout << PURPLE << "\tWe got " << nbAnimals << " Animals in total. " << nbCats << " cats and " << nbDogs
+		<< " Dogs" << RESET << std::endl;
+
+	for (int i = 0; i < nbCats; i++) {
+		arrAnimals[i] = new Cat();
+	}
+	for (int i = nbCats; i < nbAnimals; i++) {
+		arrAnimals[i] = new Dog();
+	}
+
+	std::cout << ITAL << PURPLE << "\tCats and dogs out of control!!!" << RESET << std::endl;
+	for (int i = 0; arrAnimals[i]; i++) {
+		arrAnimals[i]->makeSound();
+	}
+
+	std::cout << ITAL << PURPLE << "\tPutting the loud animals to rest..." << RESET << std::endl;
+	for (int i = 0; arrAnimals[i]; i++) {
+		delete arrAnimals[i];
+	}
 }
 
 /**
@@ -119,64 +75,17 @@ void catByBaseClass() {
  */
 void	subjectTest() {
 	std::cout << BG_WHITE BLACK "Subject test!" RESET << std::endl;
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
 	delete j;
 	delete i;
-	delete meta;
 	std::cout << std::endl;
 }
 
-/**
- * @brief Test from subject - Wrong call
- */
-void	wrongSubjectTest() {
-	std::cout << BG_WHITE BLACK "[Wrong] Subject test!" RESET << std::endl;
-	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+void	dogCopyTest() {
+	std::cout << BG_WHITE BLACK "Subject test!" RESET << std::endl;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-	delete j;
-	delete i;
-	delete meta;
-	std::cout << std::endl;
-}
-
-void 	wrongTest() {
-	{
-		std::cout << BG_WHITE BLACK "Wrong Animal" RESET << std::endl;
-		const WrongAnimal *	animal = new WrongAnimal();
-		std::cout << "WrongAnimal type: " << animal->getType() << std::endl;
-		animal->makeSound();
-		delete animal;
-		std::cout << std::endl;
-	}
-	{
-		std::cout << BG_WHITE BLACK "Wrong Cat By Wrong Cat Class" RESET << std::endl;
-		const WrongCat *	cat = new WrongCat();
-		std::cout << "WrongCat type: " << cat->getType() << std::endl;
-		cat->makeSound();
-		delete cat;
-		std::cout << std::endl;
-	}
-	{
-		std::cout << BG_WHITE BLACK "WrongCat By WrongAnimal Class" RESET << std::endl;
-		const WrongAnimal * cat = new WrongCat();
-		std::cout << "WrongAnimal type: " << cat->getType() << std::endl;
-		cat->makeSound();
-		delete cat;
-		std::cout << std::endl;
-	}
 }
