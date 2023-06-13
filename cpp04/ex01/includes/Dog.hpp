@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:07:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/10 07:45:06 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/13 07:25:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_H
 
 # include <Animal.hpp>
+# include <Brain.hpp>
 
 class Dog : public Animal {
 	public:
@@ -27,6 +28,9 @@ class Dog : public Animal {
 
 		// Public members from subject
 		void	makeSound(void) const;
+
+	private:
+		Brain *brain;
 };
 
 #endif
