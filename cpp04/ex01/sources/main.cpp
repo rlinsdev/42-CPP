@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 07:46:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 07:36:15 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@
 
 void	subjectTest();
 void	kennelTest(int nbAnimals);
-void	dogCopyTest();
+void	catCopyTest();
 
 int	main(void) {
 
 	// // Subject tests
 	// subjectTest();
 
-	// // Kennel test
+	// // Kennel test - Array of Animals
 	// kennelTest(5);
 
-	// Dog Copy
-	// dogCopyTest();
+	// Cat Copy
+	catCopyTest();
+
+	std::cout << BG_WHITE BLACK "End of tests!" RESET << std::endl;
 
 	return (0);
 }
@@ -43,8 +45,8 @@ void	kennelTest(int nbAnimals) {
 
 	std::cout << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
 
-	Animal *arrAnimals[nbAnimals + 1]; // ? mais 1??
-	arrAnimals[nbAnimals] = NULL; // Precisa?
+	Animal *arrAnimals[nbAnimals + 1]; // TODO: ? mais 1??
+	arrAnimals[nbAnimals] = NULL; // TODO: Precisa?
 
 	int nbCats = (nbAnimals / 2);
 	int nbDogs = nbAnimals - (nbAnimals / 2);
@@ -82,10 +84,42 @@ void	subjectTest() {
 	std::cout << i->getType() << " " << std::endl;
 	delete j;
 	delete i;
-	std::cout << std::endl;
 }
 
-void	dogCopyTest() {
-	std::cout << BG_WHITE BLACK "Subject test!" RESET << std::endl;
+/**
+ * @brief Copy tes animals
+ */
+void	catCopyTest() {
+	std::cout << BG_WHITE BLACK "Cat Copy test!" RESET << std::endl;
 
+	Cat *catGray = new Cat();
+
+	std::cout << ITAL << PURPLE << "\tCats thinking.... Getting some ideas..." << RESET << std::endl;
+	catGray->getBrain()->setIdea(0, "Hi Human! You belongs to me!");
+	catGray->getBrain()->setIdea(1, "Human, what are you doing in my house?!");
+
+	std::cout << "Gray Cat idea (0): \"" << catGray->getBrain()->getIdea(0) << "\"" << std::endl;
+	std::cout << "Gray Cat idea (1): \"" << catGray->getBrain()->getIdea(1) << "\"" << std::endl;
+
+	std::cout << GREEN << "Creating a copy of **Gray Cat**: " << RESET << std::endl;
+	Cat * catYellow = new Cat(*catGray);
+
+	std::cout << ITAL << PURPLE << "\tYellow/Copy Cat should have the same ideas: " << RESET << std::endl;
+	std::cout << "Yellow/Copy Cat idea 0: \"" << catYellow->getBrain()->getIdea(0) << "\"" << std::endl;
+	std::cout << "Yellow/Copy Cat idea 1: \"" << catYellow->getBrain()->getIdea(1) << "\"" << std::endl;
+
+	std::cout << ITAL << PURPLE << "\tGray Cat Changing and putting new ideas: " << RESET << std::endl;
+	catGray->getBrain()->setIdea(0, "Here is Gray! Human, where is my toy??");
+	catGray->getBrain()->setIdea(1, "Here is Gray! Human, don't bore me...");
+
+	std::cout << "Gray Cat idea (0): \"" << catGray->getBrain()->getIdea(0) << "\"" << std::endl;
+	std::cout << "Gray Cat idea (1): \"" << catGray->getBrain()->getIdea(1) << "\"" << std::endl;
+
+	std::cout << ITAL << PURPLE << "\tYellow/Copy Cat should keep the same ideas as before: " << RESET << std::endl;
+	std::cout << "Yellow/Copy Cat idea 0: \"" << catYellow->getBrain()->getIdea(0) << "\"" << std::endl;
+	std::cout << "Yellow/Copy Cat idea 1: \"" << catYellow->getBrain()->getIdea(1) << "\"" << std::endl;
+
+	std::cout << GREEN << "Free Both cats: " << RESET << std::endl;
+	delete catGray;
+	delete catYellow;
 }
