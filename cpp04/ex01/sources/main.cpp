@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/14 08:05:47 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 08:51:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	main(void) {
 	// Subject tests
 	subjectTest();
 
-	// Kennel test - Array of Animals
-	kennelTest(5);
+	// // Kennel test - Array of Animals
+	// kennelTest(5);
 
-	// Cat Copy
-	catCopyTest();
+	// // Cat Copy
+	// catCopyTest();
 
 	std::cout << std::endl << BG_WHITE BLACK "End of tests!" RESET << std::endl;
 
@@ -45,8 +45,8 @@ void	kennelTest(int nbAnimals) {
 
 	std::cout << std::endl << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
 
-	Animal *arrAnimals[nbAnimals + 1]; // TODO: ? mais 1??
-	arrAnimals[nbAnimals] = NULL; // TODO: Precisa?
+	Animal *arrAnimals[nbAnimals];
+	arrAnimals[nbAnimals] = NULL;
 
 	int nbCats = (nbAnimals / 2);
 	int nbDogs = nbAnimals - (nbAnimals / 2);
@@ -102,6 +102,8 @@ void	catCopyTest() {
 	std::cout << "Gray Cat idea (1): \"" << catGray->getBrain()->getIdea(1) << "\"" << std::endl;
 
 	std::cout << GREEN << "Creating a copy of **Gray Cat**: " << RESET << std::endl;
+
+	// Deep Copy
 	Cat * catYellow = new Cat(*catGray);
 
 	std::cout << ITAL << PURPLE << "\tYellow/Copy Cat should have the same ideas: " << RESET << std::endl;
