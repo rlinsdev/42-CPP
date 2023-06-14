@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:26:49 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 09:01:56 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 07:51:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ Dog::Dog(void) : Animal("Dog"), brain(new Brain()) {
 }
 
 /**
- * @brief Copy constructor
+ * @brief Copy constructor.
+ * Brain will be initialize by null, because when this constructor call
+ * "Copy assignment operator", there, I'll get the instance by *New Brain"
  */
 Dog::Dog(Dog const & src) : Animal(src._type), brain(NULL) {
 	std::cout << CYAN "Dog - Copy constructor called." RESET << std::endl;
@@ -43,13 +45,14 @@ Dog::~Dog(void) {
 }
 
 /**
- * @brief Copy assignment operator
+ * @brief Copy assignment operator.
+ * New Brain called passing Brain in constructor
  */
 Dog & Dog::operator=(Dog const & src) {
 	if (this != &src) {
 		this->_type = src.getType();
 	}
-	this->brain = new Brain(*src.brain);
+	this->brain = new Brain(*src.brain);  // Deep copy here
 	std::cout << "Dog - Copy assignment operator called." << std::endl;
 	return (*this);
 }

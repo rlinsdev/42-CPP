@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:44:08 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/14 07:18:34 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 07:50:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ Cat::Cat(void) : Animal("Cat"), brain(new Brain()) {
 }
 
 /**
- * @brief Copy constructor
+ * @brief Copy constructor.
+ * Brain will be initialize by null, because when this constructor call
+ * "Copy assignment operator", there, I'll get the instance by *New Brain"
  */
 Cat::Cat(Cat const & src) : Animal(src._type), brain(NULL) {
 	std::cout << CYAN "Cat - Copy constructor called." RESET << std::endl;
@@ -43,7 +45,8 @@ Cat::~Cat(void) {
 }
 
 /**
- * @brief Copy assignment operator
+ * @brief Copy assignment operator.
+ * New Brain called passing Brain in constructor
  */
 Cat & Cat::operator=(Cat const & src) {
 	if (this != &src) {
