@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/14 07:36:15 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 08:05:47 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ void	catCopyTest();
 
 int	main(void) {
 
-	// // Subject tests
-	// subjectTest();
+	// Subject tests
+	subjectTest();
 
-	// // Kennel test - Array of Animals
-	// kennelTest(5);
+	// Kennel test - Array of Animals
+	kennelTest(5);
 
 	// Cat Copy
 	catCopyTest();
 
-	std::cout << BG_WHITE BLACK "End of tests!" RESET << std::endl;
+	std::cout << std::endl << BG_WHITE BLACK "End of tests!" RESET << std::endl;
 
 	return (0);
 }
@@ -43,7 +43,7 @@ int	main(void) {
  */
 void	kennelTest(int nbAnimals) {
 
-	std::cout << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
+	std::cout << std::endl << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
 
 	Animal *arrAnimals[nbAnimals + 1]; // TODO: ? mais 1??
 	arrAnimals[nbAnimals] = NULL; // TODO: Precisa?
@@ -76,7 +76,7 @@ void	kennelTest(int nbAnimals) {
  * @brief Identical test from subject
  */
 void	subjectTest() {
-	std::cout << BG_WHITE BLACK "Subject test!" RESET << std::endl;
+	std::cout << std::endl << BG_WHITE BLACK "Subject test!" RESET << std::endl;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
@@ -90,7 +90,7 @@ void	subjectTest() {
  * @brief Copy tes animals
  */
 void	catCopyTest() {
-	std::cout << BG_WHITE BLACK "Cat Copy test!" RESET << std::endl;
+	std::cout << std::endl << BG_WHITE BLACK "Cat Copy test!" RESET << std::endl;
 
 	Cat *catGray = new Cat();
 
