@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 16:51:41 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 17:34:53 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 06:50:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Brain {
 		Brain &	operator=(Brain const & src);
 
 		std::string	getIdea (int index) const;
-		void				setIdea(int index, std::string const & idea);
+		void		setIdea(int index, std::string const &idea);
 
 		private:
 			std::string	_ideas[BRAIN_SIZE];
