@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:44:08 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 09:02:05 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 07:18:34 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Cat & Cat::operator=(Cat const & src) {
 	if (this != &src) {
 		this->_type = src.getType();
 	}
-	this->brain = new Brain(*src.brain);
+	this->brain = new Brain(*src.brain); // Deep copy
 	std::cout << "Cat - Copy assignment operator called." << std::endl;
 	return (*this);
 }

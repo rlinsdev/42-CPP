@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 17:11:09 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 08:52:17 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/14 07:19:48 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ Brain::~Brain(void) {
 }
 
 /**
- * @brief Copy assignment operator
+ * @brief Copy assignment operator.
+ * Responsible to pass value of all Ideas in Brain animals
  */
 Brain & Brain::operator=(Brain const & src) {
 	if (this != &src) {
