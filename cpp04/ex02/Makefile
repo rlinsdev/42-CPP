@@ -13,7 +13,7 @@ SRC_PATH = ./sources/
 OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRC = main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 #Check Leak memory
 LEAK = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s

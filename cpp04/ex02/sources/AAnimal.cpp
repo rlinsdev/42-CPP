@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 07:39:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:05:19 by rlins            ###   ########.fr       */
+/*   Created: 2023/06/15 07:28:24 by rlins             #+#    #+#             */
+/*   Updated: 2023/06/15 07:30:27 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Animal.hpp>
+#include <AAnimal.hpp>
 #include <Color.hpp>
 #include <string>
 #include <iostream>
@@ -18,17 +18,17 @@
 /**
  * @brief Default Constructor
  */
-Animal::Animal(void) :
+AAnimal::AAnimal(void) :
 	_type("undefined") {
-	std::cout << CYAN "Animal - No Param Constructor Called" RESET << std::endl;
+	std::cout << CYAN "AAnimal - No Param Constructor Called" RESET << std::endl;
 	return ;
 }
 
 /**
  * @brief Copy constructor
  */
-Animal::Animal(Animal const & src) {
-	std::cout << CYAN "Animal - Copy constructor called." RESET << std::endl;
+AAnimal::AAnimal(AAnimal const & src) {
+	std::cout << CYAN "AAnimal - Copy constructor called." RESET << std::endl;
 	*this = src;
 	return ;
 }
@@ -37,28 +37,28 @@ Animal::Animal(Animal const & src) {
  * @brief Default constructor with one param
  * @param type of animal
  */
-Animal::Animal(std::string const & type) :
+AAnimal::AAnimal(std::string const & type) :
 	_type(type) {
-	std::cout << CYAN "Animal - Type animal Constructor Called" RESET << std::endl;
+	std::cout << CYAN "AAnimal - Type animal Constructor Called" RESET << std::endl;
 	return ;
 }
 
 /**
  * @brief Destructor
  */
-Animal::~Animal(void) {
-	std::cout << BRIGHT_RED "Animal - Destructor called." RESET << std::endl;
+AAnimal::~AAnimal(void) {
+	std::cout << BRIGHT_RED "AAnimal - Destructor called." RESET << std::endl;
 	return ;
 }
 
 /**
  * @brief Copy assignment operator
  */
-Animal & Animal::operator=(Animal const & src) {
+AAnimal & AAnimal::operator=(AAnimal const & src) {
 	if (this != &src) {
 		this->_type = src.getType();
 	}
-	std::cout << "Animal - Copy assignment operator called." << std::endl;
+	std::cout << "AAnimal - Copy assignment operator called." << std::endl;
 	return (*this);
 }
 
@@ -66,7 +66,7 @@ Animal & Animal::operator=(Animal const & src) {
  * @brief Get Type of animal
  * @return std::string
  */
-std::string Animal::getType(void) const {
+std::string AAnimal::getType(void) const {
 	return (this->_type);
 }
 

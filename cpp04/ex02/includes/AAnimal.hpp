@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 07:38:34 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/11 15:21:26 by rlins            ###   ########.fr       */
+/*   Created: 2023/06/15 07:28:14 by rlins             #+#    #+#             */
+/*   Updated: 2023/06/15 07:29:21 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef AANIMAL_H
+# define AANIMAL_H
 
 # include <string>
 
-class Animal {
+class AAnimal {
 	public:
 		// Constructor and destructor
-		Animal(void);
-		Animal(Animal const & src);
-		Animal(std::string const & type);
-		virtual ~Animal(void);
+		AAnimal(void);
+		AAnimal(AAnimal const & src);
+		AAnimal(std::string const & type);
+		virtual ~AAnimal(void);
 
 		// Operator by Orthodox Canonical Form
-		Animal &	operator=(Animal const & src);
+		AAnimal &	operator=(AAnimal const & src);
 
 		// Getters and setters
 		std::string		getType(void) const;
