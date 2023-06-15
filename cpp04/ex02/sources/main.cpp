@@ -6,35 +6,46 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 07:40:22 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/14 08:51:22 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/15 08:19:19 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <Animal.hpp>
+#include <AAnimal.hpp>
 #include <Color.hpp>
 #include <Dog.hpp>
 #include <Cat.hpp>
 
-void	subjectTest();
 void	kennelTest(int nbAnimals);
 void	catCopyTest();
+void	AnimalCompError();
 
 int	main(void) {
 
-	// Subject tests
-	subjectTest();
+	// Kennel test - Array of Animals
+	kennelTest(5);
 
-	// // Kennel test - Array of Animals
-	// kennelTest(5);
+	// Cat Copy
+	catCopyTest();
 
-	// // Cat Copy
-	// catCopyTest();
+	// AnimalCompError();
 
 	std::cout << std::endl << BG_WHITE BLACK "End of tests!" RESET << std::endl;
 
 	return (0);
 }
+
+/**
+ * @brief Sample to generate a erro on compilation
+ * "invalid new-expression of abstract class"
+ */
+// void	AnimalCompError(void)
+// {
+// 	// SHOULD NOT COMPILE!!!
+// 	AAnimal *whale = new AAnimal();
+// 	whale.makeSound();
+// 	delete whale;
+// }
 
 /**
  * @brief Building a Kennel. Instance the class Animal and generate
@@ -45,7 +56,7 @@ void	kennelTest(int nbAnimals) {
 
 	std::cout << std::endl << BG_WHITE BLACK "Kennel test! Let's make some animals! (Cats and dogs)" RESET << std::endl;
 
-	Animal *arrAnimals[nbAnimals];
+	AAnimal *arrAnimals[nbAnimals];
 	arrAnimals[nbAnimals] = NULL;
 
 	int nbCats = (nbAnimals / 2);
@@ -70,20 +81,6 @@ void	kennelTest(int nbAnimals) {
 	for (int i = 0; arrAnimals[i]; i++) {
 		delete arrAnimals[i];
 	}
-}
-
-/**
- * @brief Identical test from subject
- */
-void	subjectTest() {
-	std::cout << std::endl << BG_WHITE BLACK "Subject test!" RESET << std::endl;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	delete j;
-	delete i;
 }
 
 /**
