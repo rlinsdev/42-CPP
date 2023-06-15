@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 07:28:14 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/15 07:29:21 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/15 08:13:37 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AAnimal {
 		std::string		getType(void) const;
 
 		// Public members from subject
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 
 	protected:
 		std::string	_type; // Attribute _type
