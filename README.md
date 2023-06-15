@@ -71,6 +71,9 @@ Subtyping polymorphism, also known as dynamic polymorphism or runtime polymorphi
 ### Virtual functions
 Virtual functions are member functions that can be override by derived class. They are declared with the virtual keyword in the base class and are defined in the derived class using the same signature as the base class function.
 
+### Abstract classes
+An abstract class means some behaviors are abstract and some are not. The abstract class itself cannot be instantiated
+
 ## CPP00-Ex00 - Megaphone
 Create a small program named **megaphone** that takes strings as parameters and outputs them in uppercase.
 This is an introduction to stdio streams and the string class.
