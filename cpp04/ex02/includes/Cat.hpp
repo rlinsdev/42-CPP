@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 11:42:57 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 08:54:05 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/15 07:44:36 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_H
 # define CAT_H
 
-# include <Animal.hpp>
+# include <AAnimal.hpp>
 # include <Brain.hpp>
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	public:
 		// Constructor and destructor
 		Cat(void);

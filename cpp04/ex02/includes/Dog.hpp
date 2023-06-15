@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 07:07:16 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/13 08:54:14 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/15 07:44:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_H
 # define DOG_H
 
-# include <Animal.hpp>
+# include <AAnimal.hpp>
 # include <Brain.hpp>
 
-class Dog : public Animal {
+class Dog : public AAnimal {
 	public:
 		// Constructor and destructor
 		Dog(void);
