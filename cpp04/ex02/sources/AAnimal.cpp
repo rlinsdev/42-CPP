@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 07:28:24 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/15 07:30:27 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/15 08:01:06 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ std::string AAnimal::getType(void) const {
 /**
  * @brief Member Function - MakeSound
  */
-void	Animal::makeSound(void) const {
+void	AAnimal::makeSound(void) const {
 	std::cout << YELLOW << this->_type << ": No one knows this sound!" RESET << std::endl;
 	return ;
 }
