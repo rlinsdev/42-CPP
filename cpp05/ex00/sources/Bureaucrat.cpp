@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:27:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/20 07:36:26 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/21 08:14:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
  */
 Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name), _grade(src._grade) {
 	std::cout << CYAN "Bureaucrat - Copy constructor called." RESET << std::endl;
-	// *this = src;
 	return ;
 }
 
@@ -82,7 +81,7 @@ int	Bureaucrat::getGrade(void) const {
 }
 
 /**
- * @brief Increment Grade - Will decrement hte grade
+ * @brief Increment Grade - Will decrement the grade. Increment will decrease -1
  * @return int
  */
 int Bureaucrat::incrementGrade(void) {
@@ -90,23 +89,23 @@ int Bureaucrat::incrementGrade(void) {
 		throw Bureaucrat::GradeTooHighException();
 	} else {
 		this->_grade --;
-		std::cout << YELLOW << "Bureaucrat " << this->_name << " was demoted to grade "
-		<< this->_grade << "." << RESET << std::endl;
+		std::cout << GREEN << "Bureaucrat " << this->_name << " was demoted to grade "
+			<< this->_grade << "." << RESET << std::endl;
 	}
 	return (this->_grade);
 }
 
 /**
- * @brief Increment Grade - Will decrement hte grade
+ * @brief Decrement Grade - Will decrement the grade. Decrement will increase +1
  * @return int
  */
 int Bureaucrat::decrementGrade(void) {
-	if (this->_grade + 1  < c_min_grade) {
+	if (this->_grade + 1  > c_min_grade) {
 		throw Bureaucrat::GradeTooLowException();
 	} else {
 		this->_grade ++;
 		std::cout << GREEN << "Bureaucrat " << this->_name << " was promoted to grade "
-		<< this->_grade << "." << RESET << std::endl;
+			<< this->_grade << "." << RESET << std::endl;
 	}
 	return (this->_grade);
 }
