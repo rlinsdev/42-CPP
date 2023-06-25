@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 09:59:30 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/25 11:09:38 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/25 11:20:41 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,14 +105,18 @@ int	Form::getGradeToSign(void) const {
 }
 
 /**
- * @brief Sign the Form
+ * @brief Sign the Form.
+ * "It changes the form status to signed if the bureaucrat’s grade is high enough
+ * (higher or egal to the required one)"
  * @param bureaucrat
  */
 void	Form::beSigned(Bureaucrat const & bureaucrat) {
-	if (this->_isSigned)
+	if (this->_isSigned) {
 		throw (Form::AlreadySignedException());
-	if (bureaucrat.getGrade() > this->_gradeToSign)
+	}
+	if (bureaucrat.getGrade() > this->_gradeToSign) {
 		throw (Form::GradeTooLowException());
+	}
 	this->_isSigned = true;
 	return ;
 }

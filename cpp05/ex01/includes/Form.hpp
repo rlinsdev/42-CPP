@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 09:51:37 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/25 10:51:47 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/25 11:16:17 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ class Form {
 		std::string const	_name;
 		bool				_isSigned;
 
+		// A constant grade required to sign it.
 		int const			_gradeToSign;
+		// And a constant grade required to execute it.
 		int const 			_gradeToExecute;
 	};
 
