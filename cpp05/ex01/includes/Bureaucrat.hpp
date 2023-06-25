@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:19:24 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/19 08:46:44 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/25 10:38:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ class Bureaucrat {
 	private:
 		std::string const	_name;
 		int					_grade;
-
-		static int const	c_max_grade = 1;
-		static int const	c_min_grade = 150;
 
 	public:
 
@@ -40,6 +37,9 @@ class Bureaucrat {
 
 		int		incrementGrade(void);
 		int		decrementGrade(void);
+
+		static int const	c_max_grade = 1;
+		static int const	c_min_grade = 150;
 
 		/**
 		 * @brief  Please note that exception classes don’t have to be designed in
