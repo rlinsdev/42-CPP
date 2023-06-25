@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:27:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/21 08:14:57 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/25 11:33:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,3 +138,22 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat const& objBure) {
 	return (os);
 }
 
+/**
+ * @brief SignForm
+ * If the form got signed,
+ * it will print something like:
+ * <bureaucrat> signed <form>
+ * Otherwise, it will print something like:
+ * <bureaucrat> couldn’t sign <form> because <reason>.
+ * @param form
+ */
+void	Bureaucrat::signForm(Form & form) const {
+	try  {
+		form.beSigned(*this);
+		std::cout << GREEN << *this << " signed " << form.getName() << RESET << std::endl;
+	}
+	catch (std::exception const & e) {
+		std::cout << RED << *this << " couldn't sign " << form.getName() << " because "
+			<< e.what() << RESET << std::endl;
+	}
+}
