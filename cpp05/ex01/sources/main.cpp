@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/28 07:17:26 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/28 07:30:06 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 void 	defaultConstructor(void);
 void	createFormTest(std::string name, int gradeToSign, int gradeToExecute);
 void	formGradeTest(void);
+void	copyConstructorTest(void);
 // void	incrementDecrementTest(void);
 // void	decrementException(void);
 // void	incrementException(void);
@@ -27,6 +28,7 @@ int	main(void) {
 
 	defaultConstructor();
 	formGradeTest();
+	copyConstructorTest();
 	// incrementDecrementTest();
 	// decrementException();
 	// incrementException();
@@ -34,6 +36,17 @@ int	main(void) {
 	std::cout << std::endl << BG_WHITE BLACK "End of Simulation" RESET << std::endl;
 
 	return (0);
+}
+
+/**
+ * @brief Copy constructor of Test
+ */
+void	copyConstructorTest(void) {
+	std::cout << std::endl << BG_WHITE BLACK "Form Copy Constructor" RESET << std::endl;
+	Form form("Form 004", 42, 42);
+	std::cout << "Form is " << form.getName() << std::endl;
+	Form formCopy(form);
+	std::cout << "Form copy is " << formCopy.getName() << std::endl;
 }
 
 /**
@@ -124,10 +137,9 @@ void	defaultConstructor(void) {
 
 /**
  * @brief Create a Form Test object
- *
- * @param name
- * @param gradeToSign Must to be between 
- * @param gradeToExecute
+ * @param name Name of Form
+ * @param gradeToSign Must to be between 1 (max) to 150 (min)
+ * @param gradeToExecute Must to be between 1 (max) to 150 (min)
  */
 void	createFormTest(std::string name, int gradeToSign, int gradeToExecute) {
 	std::cout << "Creating form named " << BLUE
