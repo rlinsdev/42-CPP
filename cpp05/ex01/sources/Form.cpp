@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 09:59:30 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/25 11:20:41 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/28 07:18:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Form::Form(void) : 	_name("Basic Form"),
 }
 
 /**
- * @brief Construct. Name and grade params
+ * @brief Construct a new Form:: Form object
+ * @param name Name of Form
+ * @param gradeToSign Must to be between 1 (max) to 150 (min)
+ * @param gradeToExecute Must to be between 1 (max) to 150 (min)
  */
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) :
 					_name(name),
