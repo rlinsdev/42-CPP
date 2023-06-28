@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/25 11:47:19 by rlins            ###   ########.fr       */
+/*   Updated: 2023/06/28 07:17:26 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #include <iostream>
 
 void 	defaultConstructor(void);
-// void	createBureaucratTest(std::string name, int grade);
-// void	nameGradeConstructor(void);
+void	createFormTest(std::string name, int gradeToSign, int gradeToExecute);
+void	formGradeTest(void);
 // void	incrementDecrementTest(void);
 // void	decrementException(void);
 // void	incrementException(void);
@@ -26,7 +26,7 @@ void 	defaultConstructor(void);
 int	main(void) {
 
 	defaultConstructor();
-	// nameGradeConstructor();
+	formGradeTest();
 	// incrementDecrementTest();
 	// decrementException();
 	// incrementException();
@@ -36,6 +36,15 @@ int	main(void) {
 	return (0);
 }
 
+/**
+ * @brief
+ *
+ */
+void	formGradeTest(void) {
+	createFormTest("Form 001 - Right", 42, 42);
+	createFormTest("Form 002 - Error In Sign Points", 1, 0);
+	createFormTest("Form 003 - Error In Execute Points", -10, 50);
+}
 
 /**
  * @brief Test by default constructor to Form
@@ -112,23 +121,25 @@ void	defaultConstructor(void) {
 // 	}
 // }
 
-// /**
-//  * @brief Create a Bureaucrat Test. Protected code by Try Catch Statements
-//  * @param name of Bureaucrat
-//  * @param grade by Bureaucrat
-//  */
-// void	createBureaucratTest(std::string name, int grade) {
-// 	std::cout << "Creating bureaucrat named " << BLUE
-// 		<< name << RESET << " with grade " << BLUE << grade << RESET << ":" << std::endl;
-// 	try {
-// 		Bureaucrat bureaucrat(name, grade);
-// 		std::cout << bureaucrat << " successfully created." << std::endl;
-// 		return ;
-// 	}
-// 	catch(Bureaucrat::GradeTooHighException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// 	catch(Bureaucrat::GradeTooLowException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// }
+
+/**
+ * @brief Create a Form Test object
+ *
+ * @param name
+ * @param gradeToSign Must to be between 
+ * @param gradeToExecute
+ */
+void	createFormTest(std::string name, int gradeToSign, int gradeToExecute) {
+	std::cout << "Creating form named " << BLUE
+		<< name << RESET << " with grade To Sign " << BLUE << gradeToSign
+		<< RESET << " with grade to execute " << BLUE << gradeToExecute
+		<< RESET << ":" << std::endl;
+	try {
+		Form form(name, gradeToSign, gradeToExecute);
+		std::cout << form.getName() << " successfully created." << std::endl;
+		return ;
+	}
+	catch(std::exception const & e) {
+		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
+	}
+}
