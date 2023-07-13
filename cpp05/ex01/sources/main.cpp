@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/28 07:30:06 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/13 08:38:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void 	defaultConstructor(void);
 void	createFormTest(std::string name, int gradeToSign, int gradeToExecute);
 void	formGradeTest(void);
 void	copyConstructorTest(void);
-// void	incrementDecrementTest(void);
-// void	decrementException(void);
-// void	incrementException(void);
+void	signFormTest(void) ;
 
 
 int	main(void) {
@@ -29,9 +27,7 @@ int	main(void) {
 	defaultConstructor();
 	formGradeTest();
 	copyConstructorTest();
-	// incrementDecrementTest();
-	// decrementException();
-	// incrementException();
+	signFormTest();
 
 	std::cout << std::endl << BG_WHITE BLACK "End of Simulation" RESET << std::endl;
 
@@ -39,7 +35,7 @@ int	main(void) {
 }
 
 /**
- * @brief Copy constructor of Test
+ * @brief Constructor copy test
  */
 void	copyConstructorTest(void) {
 	std::cout << std::endl << BG_WHITE BLACK "Form Copy Constructor" RESET << std::endl;
@@ -50,13 +46,41 @@ void	copyConstructorTest(void) {
 }
 
 /**
- * @brief
- *
+ * @brief Test to generate Bureaucrat and forms. Test to sign (with points and not enough points)
+ * Test to sign (and sign signed form)
+ */
+void	signFormTest(void) {
+	std::cout << std::endl << BG_WHITE BLACK "Bureaucrat signing forms" RESET << std::endl;
+
+	Bureaucrat	bobBureRight("Bob", 100);
+	Bureaucrat	bobBureExcep("Frank", 41); // not grade enough
+
+	Form	ftForm("42 Form", 42, 42);
+	Form	formTest1("Form 0001", 20, 5);
+	Form	formTest2("Form 0002", 5, 35);
+
+	std::cout << "Try to sign invalid grade Bureaucrat: " << bobBureExcep.getName() << "." << std::endl;
+	bobBureExcep.signForm(ftForm);
+
+	std::cout << "Try to sign " << ftForm.getName() << ":" << std::endl;
+	bobBureRight.signForm(ftForm);
+
+	std::cout << "Try to sign " << formTest1.getName() << ":" << std::endl;
+	bobBureRight.signForm(formTest1);
+
+	std::cout << "Try to sign " << formTest2.getName() << ":" << std::endl;
+	bobBureRight.signForm(formTest2);
+
+	std::cout << "Try to sign (Again) the signed form: " << formTest2.getName() << ":" << std::endl;
+	bobBureRight.signForm(formTest2);
+}
+/**
+ * @brief Form Grade test - Test correct and incorrect (sign and execute points)
  */
 void	formGradeTest(void) {
-	createFormTest("Form 001 - Right", 42, 42);
-	createFormTest("Form 002 - Error In Sign Points", 1, 0);
-	createFormTest("Form 003 - Error In Execute Points", -10, 50);
+	createFormTest("Form Correct 001", 42, 42);
+	createFormTest("Form Error 002", 1, 0); // Error In Sign Points
+	createFormTest("Form Error 003", -10, 50); // Error In Execute Points
 }
 
 /**
@@ -67,73 +91,6 @@ void	defaultConstructor(void) {
 	Form	form;
 	std::cout << "Default form is: " << form.getName() << std::endl;
 }
-
-// /**
-//  * @brief Test to check the CreateBureaucrat by Name and grade
-//  */
-// void	nameGradeConstructor(void) {
-// 	std::cout << std::endl << BG_WHITE BLACK "Bureaucrat Name and Grade constructor" RESET << std::endl;
-// 	createBureaucratTest("Michael", 20);
-// 	createBureaucratTest("Rick", 150);
-// 	createBureaucratTest("Rock", -10);
-// 	createBureaucratTest("Mustang", 200);
-// }
-
-// /**
-//  * @brief Decrement exception test
-//  */
-// void	decrementException(void) {
-// 	std::cout << std::endl << BG_WHITE BLACK "Bureaucrat Decrement Exception test" RESET << std::endl;
-
-// 	Bureaucrat bureMart("Martina", 150);
-// 	try {
-// 		std::cout << "Decrementing grade by 1. Result must be " << bureMart.getGrade() + 1 << ":" << std::endl;
-// 		bureMart.decrementGrade();
-// 	}
-// 	catch(Bureaucrat::GradeTooLowException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// }
-
-
-// /**
-//  * @brief Increment exception test
-//  */
-// void	incrementException(void) {
-// 	std::cout << std::endl << BG_WHITE BLACK "Bureaucrat Increment Exception test" RESET << std::endl;
-
-// 	Bureaucrat bureMath("Matheus", 1);
-// 	try {
-// 		std::cout << "Incrementing grade by 1. Result must be " << bureMath.getGrade() - 1 << ":" << std::endl;
-// 		bureMath.incrementGrade();
-// 	}
-// 	catch(Bureaucrat::GradeTooHighException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// }
-
-// /**
-//  * @brief Increment and decrement test with success
-//  */
-// void	incrementDecrementTest(void) {
-// 	std::cout << std::endl << BG_WHITE BLACK "Bureaucrat Increment Decrement test" RESET << std::endl;
-
-// 	Bureaucrat bureTom("Tomas", 42);
-// 	try {
-// 		std::cout << "Decrementing grade by 1. Result must be " << bureTom.getGrade() + 1 << ":" << std::endl;
-// 		bureTom.decrementGrade();
-
-// 		std::cout << "Incrementing grade by 1. Result must be " << bureTom.getGrade() - 1 << ":" << std::endl;
-// 		bureTom.incrementGrade();
-// 	}
-// 	catch(Bureaucrat::GradeTooHighException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// 	catch(Bureaucrat::GradeTooLowException & e) {
-// 		std::cerr << RED "Exception: " << e.what() << RESET << std::endl;
-// 	}
-// }
-
 
 /**
  * @brief Create a Form Test object
@@ -148,7 +105,7 @@ void	createFormTest(std::string name, int gradeToSign, int gradeToExecute) {
 		<< RESET << ":" << std::endl;
 	try {
 		Form form(name, gradeToSign, gradeToExecute);
-		std::cout << form.getName() << " successfully created." << std::endl;
+		std::cout << GREEN << form.getName() << " successfully created." << RESET << std::endl;
 		return ;
 	}
 	catch(std::exception const & e) {
