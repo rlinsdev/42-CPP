@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:19:24 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/19 08:46:44 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/13 07:20:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ class Bureaucrat {
 		// Operator by Orthodox Canonical Form
 		Bureaucrat &	operator=(Bureaucrat const & src);
 
-		// std::string const &	getName(void) const;
 		std::string 	getName(void) const;
 		int				getGrade(void) const;
 
