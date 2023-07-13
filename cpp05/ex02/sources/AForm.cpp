@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:52:29 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 20:17:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:29:34 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void	AForm::beSigned(Bureaucrat const & bureaucrat) {
  *
  * @param bureaucrat
  */
-void	AForm::execute(Bureaucrat const & bureaucrat) {
+void	AForm::execute(Bureaucrat const & bureaucrat) const {
 	if (this->_isSigned == false) {
 		throw (AForm::NotSignedException());
 	}
