@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 09:59:30 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/28 07:18:52 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/13 08:17:04 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <Color.hpp>
 #include <iostream>
 
-// /**
-//  * @brief Default Constructor
-//  */
+/**
+ * @brief Default Constructor
+ */
 Form::Form(void) : 	_name("Basic Form"),
 				 	_isSigned(false),
 					_gradeToSign(Bureaucrat::c_min_grade),
@@ -117,7 +117,7 @@ void	Form::beSigned(Bureaucrat const & bureaucrat) {
 	if (this->_isSigned) {
 		throw (Form::AlreadySignedException());
 	}
-	if (bureaucrat.getGrade() > this->_gradeToSign) {
+	if (bureaucrat.getGrade() < this->_gradeToSign) {
 		throw (Form::GradeTooLowException());
 	}
 	this->_isSigned = true;
