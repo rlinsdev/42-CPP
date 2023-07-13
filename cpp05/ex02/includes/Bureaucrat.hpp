@@ -6,17 +6,17 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:19:24 by rlins             #+#    #+#             */
-/*   Updated: 2023/06/25 11:28:55 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/13 20:20:00 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BURE_H
 # define BURE_H
 
-# include "Form.hpp"
+# include "AForm.hpp"
 # include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -41,7 +41,8 @@ class Bureaucrat {
 		int		incrementGrade(void);
 		int		decrementGrade(void);
 
-		void	signForm(Form & form) const;
+		void	signForm(AForm & form) const;
+		void	executeForm(AForm & form) const;
 
 		static int const	c_max_grade = 1;
 		static int const	c_min_grade = 150;
