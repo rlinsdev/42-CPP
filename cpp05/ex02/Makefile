@@ -14,7 +14,7 @@ OBJ_PATH = ./objects/
 INC_PATH = ./includes/
 
 SRC = 	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp 
+		RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 #Check Leak memory
 LEAK = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s
