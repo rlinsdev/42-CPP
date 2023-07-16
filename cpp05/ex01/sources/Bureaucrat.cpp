@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:27:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 08:32:34 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:58:16 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int Bureaucrat::incrementGrade(void) {
 		throw Bureaucrat::GradeTooHighException();
 	} else {
 		this->_grade --;
-		std::cout << GREEN << "Bureaucrat " << this->_name << " was demoted to grade "
+		std::cout << GREEN << "Bureaucrat " << this->_name << " was promoted to grade "
 			<< this->_grade << "." << RESET << std::endl;
 	}
 	return (this->_grade);
@@ -104,7 +104,7 @@ int Bureaucrat::decrementGrade(void) {
 		throw Bureaucrat::GradeTooLowException();
 	} else {
 		this->_grade ++;
-		std::cout << GREEN << "Bureaucrat " << this->_name << " was promoted to grade "
+		std::cout << GREEN << "Bureaucrat " << this->_name << " was demoted to grade "
 			<< this->_grade << "." << RESET << std::endl;
 	}
 	return (this->_grade);
