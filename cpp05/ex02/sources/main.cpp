@@ -6,12 +6,14 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 20:05:17 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 13:46:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <Form.hpp>
 #include <Bureaucrat.hpp>
+#include <ShrubberyCreationForm.hpp>
+#include <RobotomyRequestForm.hpp>
+#include <PresidentialPardonForm.hpp>
 #include <Color.hpp>
 #include <iostream>
 
@@ -28,6 +30,34 @@ int	main(void) {
 	// formGradeTest();
 	// copyConstructorTest();
 	// signFormTest();
+
+	Bureaucrat	lowlyBureaucrat("Lowly Larry", 142);
+	Bureaucrat	averageBureaucrat("Average Andy", 65);
+	Bureaucrat	highBureaucrat("High Harry", 6);
+
+	std::cout << std::endl << BG_WHITE BLACK "Three bureaucrats created:" RESET << std::endl;
+	std::cout << "\t" << lowlyBureaucrat;
+	std::cout << "\t" << averageBureaucrat;
+	std::cout << "\t" << highBureaucrat << std::endl;
+
+	ShrubberyCreationForm	shrubForm("Forest");
+	RobotomyRequestForm		robotomyForm("CEO"); // By target
+	PresidentialPardonForm	pardonForm(highBureaucrat.getName()); // By GetName
+
+	std::cout << std::endl << BG_WHITE BLACK "Forms generated! " RESET << std::endl;
+	std::cout << "\t" << shrubForm;
+	std::cout << "\t" << robotomyForm;
+	std::cout << "\t" << pardonForm;
+
+	std::cout << std::endl << BG_WHITE BLACK "Signing and executing Shrubbery form: " RESET << std::endl;
+	// std::cout << std::endl << "-- Signing and executing Shrubbery form:" << std::endl;
+	lowlyBureaucrat.signForm(shrubForm);
+	lowlyBureaucrat.executeForm(shrubForm);
+	averageBureaucrat.executeForm(shrubForm);
+
+
+
+
 
 	std::cout << std::endl << BG_WHITE BLACK "End of Simulation" RESET << std::endl;
 
