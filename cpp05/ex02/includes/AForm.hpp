@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:47:25 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 19:52:07 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 11:22:22 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ class AForm {
 		int const 			_gradeToExecute;
 	};
 
-	std::ostream &	operator<<(std::ostream & os, Bureaucrat const & obj);
+	std::ostream &	operator<<(std::ostream & os, AForm const & obj); // Base class, not more Bureaucrat
 
 #endif
