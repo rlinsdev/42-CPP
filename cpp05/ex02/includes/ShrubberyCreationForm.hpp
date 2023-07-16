@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:31:29 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 08:36:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:43:27 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 class ShrubberyCreationForm : public AForm {
 
 	public:
-		// Constructor and destructor
+		// Constructor
 		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(std::string const & target);  // Target - Subject
+
+		// Copy constructor
 		ShrubberyCreationForm(ShrubberyCreationForm const & src);
-		// ShrubberyCreationForm(std::string const & target);
+
+		// Destructor
 		~ShrubberyCreationForm(void);
 
+		// Copy assignment operator
 		ShrubberyCreationForm &	operator=(ShrubberyCreationForm const & src);
 
 		// Accessors: Getters Setters
@@ -33,7 +38,7 @@ class ShrubberyCreationForm : public AForm {
 
 		// Subject values
 		static int const	gradeToSign = 145;
-		static int const	gradeToExecute = 4137;
+		static int const	gradeToExecute = 137;
 
 	private:
 		std::string	_target;

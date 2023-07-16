@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:34:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 08:55:37 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:49:57 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,23 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) 
 	return ;
 }
 
-// ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
-// 		:	AForm("Presidential Pardon Form",
-// 					ShrubberyCreationForm::gradeToSign,
-// 					ShrubberyCreationForm::gradeToExecute),
-// 			_target(target)
-// {
-// 	std::cout << CYAN "ShrubberyCreationForm attribute constructor called."
-// 		RESET << std::endl;
-// 	if (_target.empty())
-// 		_target = "Unknown";
-// 	return ;
-// }
+/**
+ * @brief Subject:
+ * All of them take only one parameter in their constructor: the target of the form. For
+ * example, "home" if you want to plant shrubbery at home.
+ * @param target
+ */
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
+		:	AForm("Presidential Pardon Form",
+			ShrubberyCreationForm::gradeToSign,
+			ShrubberyCreationForm::gradeToExecute),
+			_target(target) {
+	std::cout << CYAN "ShrubberyCreationForm attribute constructor called."
+		RESET << std::endl;
+	if (_target.empty())
+		_target = "Unknown";
+	return ;
+}
 
 /**
  * @brief Destructor
