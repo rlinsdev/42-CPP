@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 13:46:24 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:53:07 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,14 @@ int	main(void) {
 	lowlyBureaucrat.signForm(shrubForm);
 	lowlyBureaucrat.executeForm(shrubForm);
 	averageBureaucrat.executeForm(shrubForm);
+
+	// std::cout << std::endl << "-- Signing and executing Presidential Pardon form:" << std::endl;
+	std::cout << std::endl << BG_WHITE BLACK "Signing and executing Presidential Pardon form: " RESET << std::endl;
+	highBureaucrat.executeForm(pardonForm);
+	highBureaucrat.signForm(pardonForm);
+	highBureaucrat.executeForm(pardonForm);
+	highBureaucrat.incrementGrade();
+	highBureaucrat.executeForm(pardonForm);
 
 
 
