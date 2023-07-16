@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 10:27:10 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 20:27:02 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:24:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
  */
 std::ostream& operator<<(std::ostream& os, Bureaucrat const& objBure) {
 	os << BLUE << objBure.getName() << RESET << ". Bureaucrat Grade: "
-	<< BLUE << objBure.getGrade() << RESET << "." << std::endl;
+	<< BLUE << objBure.getGrade() << RESET << ".";
 	return (os);
 }
 
@@ -154,28 +154,23 @@ void	Bureaucrat::signForm(AForm & form) const {
 			<< RESET << std::endl;
 	}
 	catch (std::exception const & e) {
-		std::cout << *this << RED << " couldn't sign " << form.getName() << " because it is... "
+		std::cout << *this << RED << " couldn't sign " << form.getName() << ". Reason: "
 			<< e.what() << RESET << std::endl;
 	}
 }
 
 /**
- * @brief
- *
+ * @brief It must attempt to execute the form
  * @param form
  */
 void	Bureaucrat::executeForm(AForm & form) const {
 	try {
 		form.execute(*this);
-		// std::cout << GREEN << *this << " executed " << form << RESET << std::endl;
 		std::cout << *this << GREEN << " executed " << form.getName() << " successfully!!"
 			<< RESET << std::endl;
 	}
-	catch (std::exception const & e)
-	{
-		// std::cout << RED << *this << " couldn't execute " << form << " because: "
-		// 	<< e.what() << RESET << std::endl;
-		std::cout << *this << RED << " couldn't be executed " << form.getName() << " why... "
+	catch (std::exception const & e) {
+		std::cout << *this << RED << " couldn't be executed " << form.getName() << ". Reason: "
 			<< e.what() << RESET << std::endl;
 	}
 	return ;
