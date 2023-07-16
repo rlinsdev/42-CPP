@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:32:31 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 07:57:25 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:31:50 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 class PresidentialPardonForm : public AForm {
 
 	public:
-		// Constructor and destructor
+		// Constructor
 		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string const & target); // Target Subject
+
+		// Copy constructor
 		PresidentialPardonForm(PresidentialPardonForm const & src);
-		// PresidentialPardonForm(std::string const & target);
+
+		// Destructor
 		~PresidentialPardonForm(void);
 
+		// Copy assignment operator
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const & src);
 
 		// Accessors: Getters Setters

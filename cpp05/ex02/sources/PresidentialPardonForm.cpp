@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:40:07 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 07:57:55 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:47:54 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,24 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & sr
 	return ;
 }
 
-// PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
-// 		:	AForm("Presidential Pardon Form",
-// 					PresidentialPardonForm::gradeToSign,
-// 					PresidentialPardonForm::gradeToExecute),
-// 			_target(target)
-// {
-// 	std::cout << CYAN "PresidentialPardonForm attribute constructor called."
-// 		RESET << std::endl;
-// 	if (_target.empty())
-// 		_target = "Unknown";
-// 	return ;
-// }
+/**
+ * @brief Subject:
+ * All of them take only one parameter in their constructor: the target of the form. For
+ * example, "home" if you want to plant shrubbery at home.
+ * @param target
+ */
+PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
+		:	AForm("Presidential Pardon Form",
+			PresidentialPardonForm::gradeToSign,
+			PresidentialPardonForm::gradeToExecute),
+			_target(target)
+{
+	std::cout << CYAN "PresidentialPardonForm attribute constructor called."
+		RESET << std::endl;
+	if (_target.empty())
+		_target = "Unknown";
+	return ;
+}
 
 /**
  * @brief Destructor
