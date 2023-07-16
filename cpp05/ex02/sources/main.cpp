@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 14:53:07 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 15:01:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,16 @@ int	main(void) {
 	highBureaucrat.incrementGrade();
 	highBureaucrat.executeForm(pardonForm);
 
+	std::cout << std::endl << BG_WHITE BLACK "Signing and executing Robotomy form: " RESET << std::endl;
+	// std::cout << std::endl << "-- Signing and executing Robotomy form:" << std::endl;
+	averageBureaucrat.executeForm(robotomyForm);
+	averageBureaucrat.signForm(robotomyForm);
+	averageBureaucrat.executeForm(robotomyForm);
+	highBureaucrat.executeForm(robotomyForm);
 
 
 
-
-	std::cout << std::endl << BG_WHITE BLACK "End of Simulation" RESET << std::endl;
+	// std::cout << std::endl << BG_WHITE BLACK "End of Simulation" RESET << std::endl;
 
 	return (0);
 }
