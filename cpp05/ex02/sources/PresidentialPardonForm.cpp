@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:40:07 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 10:47:54 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:49:05 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
 		:	AForm("Presidential Pardon Form",
 			PresidentialPardonForm::gradeToSign,
 			PresidentialPardonForm::gradeToExecute),
-			_target(target)
-{
+			_target(target) {
 	std::cout << CYAN "PresidentialPardonForm attribute constructor called."
 		RESET << std::endl;
 	if (_target.empty())

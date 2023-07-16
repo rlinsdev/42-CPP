@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:59:12 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 08:12:06 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:42:24 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 class RobotomyRequestForm : public AForm {
 
 	public:
-		// Constructor and destructor
+		// Constructor
 		RobotomyRequestForm(void);
+		RobotomyRequestForm(std::string const & target); // Target - Subject
+
+		// Copy constructor
 		RobotomyRequestForm(RobotomyRequestForm const & src);
-		// RobotomyRequestForm(std::string const & target);
+
+		// Destructor
 		~RobotomyRequestForm(void);
 
+		// Copy assignment operator
 		RobotomyRequestForm &	operator=(RobotomyRequestForm const & src);
 
 		// Accessors: Getters Setters

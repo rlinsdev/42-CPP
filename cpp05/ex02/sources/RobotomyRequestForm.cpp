@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:12:52 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/14 08:20:00 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 10:48:46 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,23 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : AFor
 	return ;
 }
 
-// RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
-// 		:	AForm("Presidential Pardon Form",
-// 					RobotomyRequestForm::gradeToSign,
-// 					RobotomyRequestForm::gradeToExecute),
-// 			_target(target)
-// {
-// 	std::cout << CYAN "RobotomyRequestForm attribute constructor called."
-// 		RESET << std::endl;
-// 	if (_target.empty())
-// 		_target = "Unknown";
-// 	return ;
-// }
+/**
+ * @brief Subject:
+ * All of them take only one parameter in their constructor: the target of the form. For
+ * example, "home" if you want to plant shrubbery at home.
+ * @param target
+ */
+RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
+		:	AForm("Presidential Pardon Form",
+			RobotomyRequestForm::gradeToSign,
+			RobotomyRequestForm::gradeToExecute),
+			_target(target) {
+	std::cout << CYAN "RobotomyRequestForm attribute constructor called."
+		RESET << std::endl;
+	if (_target.empty())
+		_target = "Unknown";
+	return ;
+}
 
 /**
  * @brief Destructor
