@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:34:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 10:49:57 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:26:01 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) 
  * @param target
  */
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
-		:	AForm("Presidential Pardon Form",
+		:	AForm("Shrubbery Creation Form",
 			ShrubberyCreationForm::gradeToSign,
 			ShrubberyCreationForm::gradeToExecute),
 			_target(target) {
-	std::cout << CYAN "ShrubberyCreationForm attribute constructor called."
-		RESET << std::endl;
+	std::cout << CYAN "ShrubberyCreationForm attribute constructor called." << RESET << std::endl;
 	if (_target.empty())
 		_target = "Unknown";
 	return ;
@@ -97,8 +96,8 @@ void	ShrubberyCreationForm::beExecuted(void) const {
 			ofs << ShrubberyCreationForm::_shrubbery;
 		else
 			ofs << ShrubberyCreationForm::_shrubberyAlt;
-		std::cout << "A shrubbery has been planted at "
-				<< _target << "_shrubbery." << std::endl;
+		std::cout << PURPLE << "\tA shrubbery has been planted at "
+				<< _target << "_shrubbery." << RESET <<  std::endl;
 		ofs.close();
 	}
 	return ;

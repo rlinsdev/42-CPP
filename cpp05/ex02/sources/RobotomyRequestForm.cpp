@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:12:52 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 10:48:46 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 13:39:52 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) : AFor
  * @param target
  */
 RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
-		:	AForm("Presidential Pardon Form",
+		:	AForm("Robotomy Request Form",
 			RobotomyRequestForm::gradeToSign,
 			RobotomyRequestForm::gradeToExecute),
 			_target(target) {
