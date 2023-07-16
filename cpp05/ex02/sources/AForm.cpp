@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:52:29 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/13 20:29:34 by rlins            ###   ########.fr       */
+/*   Updated: 2023/07/16 14:15:30 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) :
 				 	_isSigned(false),
 					_gradeToSign(gradeToSign),
 					_gradeToExecute(gradeToExecute) {
+	std::cout << CYAN "Form attribute constructor called." RESET << std::endl;
 	if (gradeToSign < Bureaucrat::c_max_grade || gradeToExecute < Bureaucrat::c_max_grade) {
 		throw AForm::GradeTooHighException();
 	} else if (gradeToSign > Bureaucrat::c_min_grade || gradeToExecute > Bureaucrat::c_min_grade) {
@@ -112,13 +113,14 @@ int	AForm::getGradeToSign(void) const {
  * @brief Sign the AForm.
  * "It changes the form status to signed if the bureaucrat’s grade is high enough
  * (higher or egal to the required one)"
+ * Pay attention: Higher means Bureaucrat greater than 'grade To Sign' Greater means lower number
  * @param bureaucrat
  */
 void	AForm::beSigned(Bureaucrat const & bureaucrat) {
 	if (this->_isSigned) {
 		throw (AForm::AlreadySignedException());
 	}
-	if (bureaucrat.getGrade() < this->_gradeToSign) {
+	if (bureaucrat.getGrade() > this->_gradeToSign) {
 		throw (AForm::GradeTooLowException());
 	}
 	this->_isSigned = true;
@@ -126,15 +128,15 @@ void	AForm::beSigned(Bureaucrat const & bureaucrat) {
 }
 
 /**
- * @brief TODO
- *
+ * @brief Execute the AForm
+ * Pay Attention: Compare with Grade to Execute. Not to Sign.
  * @param bureaucrat
  */
 void	AForm::execute(Bureaucrat const & bureaucrat) const {
 	if (this->_isSigned == false) {
 		throw (AForm::NotSignedException());
 	}
-	if (bureaucrat.getGrade() < this->_gradeToSign) {
+	if (bureaucrat.getGrade() > this->_gradeToExecute) {
 		throw (AForm::GradeTooLowException());
 	}
 	this->beExecuted();
@@ -171,7 +173,7 @@ const char* AForm::AlreadySignedException::what() const throw() {
  * @return const char*
  */
 const char*	AForm::NotSignedException::what() const throw() {
-	return (RED "orm has not been signed!" RESET);
+	return (RED "Form has not been signed!" RESET);
 }
 
 /**
@@ -180,10 +182,11 @@ const char*	AForm::NotSignedException::what() const throw() {
  * @return std::ostream&
  */
 std::ostream& operator<<(std::ostream& os, AForm const& obj) {
-	os << BLUE << obj.getName() << RESET << ". Signed? : "
-	   << BLUE << obj.isSigned() << RESET << ". Required to Sign:"
-	   << BLUE << obj.getGradeToSign() << RESET << ". Required to Execute:"
-	   << BLUE << obj.getGradeToExecute() << RESET << std::endl;
+	os 	<< BLUE << obj.getName() << RESET << ". Signed?: "
+		<< (obj.isSigned() ? "Yes!!!" : "No...") <<
+		" Required to Sign: "
+		<< BLUE << obj.getGradeToSign() << RESET << ". Required to Execute: "
+		<< BLUE << obj.getGradeToExecute() << RESET << std::endl;
 	return (os);
 }
 
