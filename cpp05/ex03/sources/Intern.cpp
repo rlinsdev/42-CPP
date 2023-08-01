@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 15:53:59 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/17 07:01:20 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/01 07:45:58 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Intern &	Intern::operator=(Intern const & src) {
 }
 
 /**
- * @brief Create a Presidential Pardon Form object
+ * @brief Create a new instance of Presidential Pardon Form object
  * @param target
  * @return AForm*
  */
@@ -58,7 +58,7 @@ static AForm *	createPresidentialPardonForm(std::string const & target) {
 }
 
 /**
- * @brief Create a Robotomy Request Form object
+ * @brief Create a new instance of Robotomy Request Form object
  * @param target
  * @return AForm*
  */
@@ -67,7 +67,7 @@ static AForm *	createRobotomyRequestForm(std::string const & target) {
 }
 
 /**
- * @brief Create a Shrubbery Creation Form object
+ * @brief Create a new instance of Shrubbery Creation Form object
  * @param target
  * @return AForm*
  */
@@ -84,23 +84,22 @@ const char *	Intern::InvalidFormName::what(void) const throw() {
 }
 
 /**
- * @brief
- *
- * @param formName
- * @param target
- * @return AForm*
+ * @brief Intern Make Form. Capacity from Intern
+ * @param formName: Name of form
+ * @param target: Target of a form
+ * @return It return a pointer to a Form object
  */
-AForm *	Intern::makeForm(std::string formName, std::string target)
-{
+AForm *	Intern::makeForm(std::string formName, std::string target) { // TODO: AForm de retorno? Está certo isso?
 	AForm *	formToCreate = NULL;
-	static formList const	forms[3] = {
-			{"shrubbery creation", createShrubberyCreationForm},
+	static formList const forms[3] = {
+			{"shrubbery generate", createShrubberyCreationForm},
 			{"robotomy request", createRobotomyRequestForm},
 			{"presidential pardon", createPresidentialPardonForm}
 		};
 
 	for (int i = 0; i < 3; i++) {
 		if (forms[i].formName == formName) {
+			// Call the instance of corresponding class
 			formToCreate = forms[i].function(target);
 			std::cout << GREEN "Intern created " << *formToCreate << RESET << std::endl;
 			return (formToCreate);
@@ -109,18 +108,3 @@ AForm *	Intern::makeForm(std::string formName, std::string target)
 	std::cout << RED "Intern could not create form named: " << formName << RESET;
 	throw Intern::InvalidFormName();
 }
-
-// /**
-//  * @brief Accessor - getTarget
-//  */
-// std::string const &	Intern::getTarget(void) const {
-// 	return (this->_target);
-// }
-
-// /**
-//  * @brief Be Executed - Message from Subject
-//  */
-// void	Intern::beExecuted(void) const {
-// 	std::cout << GREEN << this->_target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
-// 	return ;
-// }
