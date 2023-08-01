@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:47:25 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 11:22:22 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/01 06:57:18 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AForm {
 		AForm(void);
 		AForm(AForm const & src);
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
-		~AForm(void);
+		virtual ~AForm(void);
 
 		// Operator by Orthodox Canonical AForm
 		AForm &	operator=(AForm const & src);
