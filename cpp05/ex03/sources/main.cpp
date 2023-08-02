@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 07:40:47 by rlins             #+#    #+#             */
-/*   Updated: 2023/08/01 08:21:49 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/02 07:35:55 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	main(void) {
 /**
  * @brief Generate Forms. Responsible to create a new instance of Intern and Bureaucrat.
  * Will call Make Form and try go sign and execute form.
- * @param formName TODO
- * @param target
+ * @param formName Name of Form. Must be a pattern
+ * @param target Target of form
  */
 void	testInternFormCreation(std::string formName, std::string target) {
 	std::cout << BG_WHITE << "Form!" << RESET << " Creating form named " << BLUE

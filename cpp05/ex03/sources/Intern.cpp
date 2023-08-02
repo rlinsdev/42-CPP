@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 15:53:59 by rlins             #+#    #+#             */
-/*   Updated: 2023/08/01 07:45:58 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/02 07:06:50 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ static AForm *	createShrubberyCreationForm(std::string const & target) {
 }
 
 /**
- * @brief TODO: Precisa?
+ * @brief When passed a invalid form name,
  * @return const char*
  */
 const char *	Intern::InvalidFormName::what(void) const throw() {
@@ -89,7 +89,7 @@ const char *	Intern::InvalidFormName::what(void) const throw() {
  * @param target: Target of a form
  * @return It return a pointer to a Form object
  */
-AForm *	Intern::makeForm(std::string formName, std::string target) { // TODO: AForm de retorno? Está certo isso?
+AForm *	Intern::makeForm(std::string formName, std::string target) {
 	AForm *	formToCreate = NULL;
 	static formList const forms[3] = {
 			{"shrubbery generate", createShrubberyCreationForm},

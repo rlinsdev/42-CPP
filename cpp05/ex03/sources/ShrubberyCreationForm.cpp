@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 08:34:55 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 14:26:01 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/02 07:38:02 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,13 @@ std::string const &	ShrubberyCreationForm::getTarget(void) const {
 /**
  * @brief Subject: Create a file <target>_shrubbery in the working directory, and writes ASCII trees
  * inside it.
- * https://ascii.co.uk/art/tree
+ * Path location: https://ascii.co.uk/art/tree
  */
 void	ShrubberyCreationForm::beExecuted(void) const {
 	std::ofstream	ofs;
 
 	ofs.open((this->_target + "_shrubbery").c_str(),
-								std::ofstream::out | std::ofstream::app);
-
-	// TODO: Necessário random aqui?
+		std::ofstream::out | std::ofstream::app);
 
 	if (ofs.is_open())
 	{
