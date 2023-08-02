@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 15:54:06 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/17 07:00:27 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/02 07:24:08 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,6 @@ class Intern {
 			public:
 				virtual const char *	what(void) const throw();
 		};
-
-		// // Subject values
-		// static int const	gradeToSign = 25;
-		// static int const	gradeToExecute = 5;
 
 	private:
 		typedef struct	sFormList {

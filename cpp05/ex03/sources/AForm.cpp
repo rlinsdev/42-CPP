@@ -6,7 +6,7 @@
 /*   By: rlins <rlins@student.42sp.org.br>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 19:52:29 by rlins             #+#    #+#             */
-/*   Updated: 2023/07/16 14:15:30 by rlins            ###   ########.fr       */
+/*   Updated: 2023/08/02 06:52:14 by rlins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,8 +168,7 @@ const char* AForm::AlreadySignedException::what() const throw() {
 }
 
 /**
- * @brief TODO
- *
+ * @brief Not Signed Exception
  * @return const char*
  */
 const char*	AForm::NotSignedException::what() const throw() {
