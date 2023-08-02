@@ -40,7 +40,7 @@ $(NAME): $(OBJS)
 	@echo "$(GREEN)Build Successful$(RESET)"
 
 valgrind:
-	$(LEAK) ./01-Maggots
+	$(LEAK) ./03-Bureaucrat
 
 clean:
 	@echo "$(RED)Cleaning objects...$(RESET)"
